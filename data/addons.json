@@ -1,14 +1,75 @@
 [
   {
-    "id": "minicc",
-    "name": "MiniCC",
-    "description": "Suivi des cooldowns de crowd control en temps réel. Affiche les CC actifs sur les ennemis avec une interface compacte et claire.",
+    "id": "arcui",
+    "name": "ArcUI",
+    "description": "Interface complète et modulaire pour World of Warcraft. Regroupe les éléments essentiels de l'UI dans un design épuré et optimisé pour le haut niveau.",
     "version": "1.0.0",
     "wowVersion": "11.1.0",
-    "image": "/images/addons/minicc.png",
+    "image": "/images/addons/arcui.png",
     "profiles": [
       {
-        "label": "Default",
+        "label": "Mage Arcane",
+        "class": "mage",
+        "spec": "arcane",
+        "string": "VOTRE_STRING_ICI"
+      },
+      {
+        "label": "Mage Feu",
+        "class": "mage",
+        "spec": "fire",
+        "string": "VOTRE_STRING_ICI"
+      },
+      {
+        "label": "Death Knight Sang",
+        "class": "deathknight",
+        "spec": "blood",
+        "string": "VOTRE_STRING_ICI"
+      },
+      {
+        "label": "Death Knight Givre",
+        "class": "deathknight",
+        "spec": "frost",
+        "string": "VOTRE_STRING_ICI"
+      }
+    ],
+    "links": {
+      "curseforge": "",
+      "wago": "",
+      "github": ""
+    }
+  },
+  {
+    "id": "plater",
+    "name": "Plater",
+    "description": "Profil Plater personnalisé pour des barres de vie ennemies claires et lisibles en Mythic+. Indicateurs de cast, CC et priorités visibles en un coup d'œil.",
+    "version": "1.0.0",
+    "wowVersion": "11.1.0",
+    "image": "/images/addons/plater.png",
+    "profiles": [
+      {
+        "label": "Profil Global",
+        "class": "all",
+        "spec": "all",
+        "string": "VOTRE_STRING_ICI"
+      }
+    ],
+    "links": {
+      "curseforge": "https://www.curseforge.com/wow/addons/plater-nameplates",
+      "wago": "",
+      "github": ""
+    }
+  },
+  {
+    "id": "unhalted-unit-frames",
+    "name": "UnhaltedUnitFrames",
+    "description": "Frames de groupe et de raid repensées pour une lisibilité maximale. Informations essentielles toujours visibles, sans surcharge visuelle.",
+    "version": "1.0.0",
+    "wowVersion": "11.1.0",
+    "image": "/images/addons/unhalted.png",
+    "profiles": [
+      {
+        "label": "Profil Global",
+        "class": "all",
         "spec": "all",
         "string": "VOTRE_STRING_ICI"
       }
@@ -16,7 +77,61 @@
     "links": {
       "curseforge": "",
       "wago": "",
-      "github": "https://github.com/Maystine/MiniCC"
+      "github": ""
+    }
+  },
+  {
+    "id": "quartz",
+    "name": "Quartz",
+    "description": "Barre de cast modulaire et hautement configurable. Affiche la latence réseau, les délais de cast et les animations fluides pour un timing parfait.",
+    "version": "1.0.0",
+    "wowVersion": "11.1.0",
+    "image": "/images/addons/quartz.png",
+    "profiles": [
+      {
+        "label": "Profil Global",
+        "class": "all",
+        "spec": "all",
+        "string": "VOTRE_STRING_ICI"
+      }
+    ],
+    "links": {
+      "curseforge": "https://www.curseforge.com/wow/addons/quartz",
+      "wago": "",
+      "github": ""
+    }
+  },
+  {
+    "id": "sensei",
+    "name": "Sensei Class Resource Bar",
+    "description": "Barres de ressources personnalisées — barre de vie, ressource principale et ressource secondaire. Un string dédié pour chaque barre, totalement modulaire.",
+    "version": "1.0.0",
+    "wowVersion": "11.1.0",
+    "image": "/images/addons/sensei.png",
+    "profiles": [
+      {
+        "label": "Barre de vie",
+        "class": "all",
+        "spec": "health",
+        "string": "VOTRE_STRING_ICI"
+      },
+      {
+        "label": "Ressource 1",
+        "class": "all",
+        "spec": "resource1",
+        "string": "VOTRE_STRING_ICI"
+      },
+      {
+        "label": "Ressource 2",
+        "class": "all",
+        "spec": "resource2",
+        "string": "VOTRE_STRING_ICI"
+      }
+    ],
+    "links": {
+      "curseforge": "",
+      "wago": "",
+      "github": ""
     }
   }
 ]
