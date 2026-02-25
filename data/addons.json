@@ -1,0 +1,22 @@
+[
+  {
+    "id": "minicc",
+    "name": "MiniCC",
+    "description": "Suivi des cooldowns de crowd control en temps réel. Affiche les CC actifs sur les ennemis avec une interface compacte et claire.",
+    "version": "1.0.0",
+    "wowVersion": "11.1.0",
+    "image": "/images/addons/minicc.png",
+    "profiles": [
+      {
+        "label": "Default",
+        "spec": "all",
+        "string": "VOTRE_STRING_ICI"
+      }
+    ],
+    "links": {
+      "curseforge": "",
+      "wago": "",
+      "github": "https://github.com/Maystine/MiniCC"
+    }
+  }
+]
