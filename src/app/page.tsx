@@ -199,7 +199,7 @@ export default function HomePage() {
 
           {/* Iframe */}
           <iframe
-            src="https://player.twitch.tv/?channel=Maystine&parent=maystine-cxlj8xltw-maystines-projects.vercel.app"
+            src="https://player.twitch.tv/?channel=Maystine&parent=maystine.vercel.app&&muted=true"
             height="270"
             width="100%"
             style={{ display: 'block' }}
