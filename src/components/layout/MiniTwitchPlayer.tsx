@@ -56,7 +56,7 @@ export default function MiniTwitchPlayer() {
       {/* Iframe */}
       {!minimized && (
         <iframe
-          src="https://player.twitch.tv/?channel=Maystine&parent=maystine.vercel.app&muted=true"
+          src="https://player.twitch.tv/?channel=Maystine&parent=maystine-cxlj8xltw-maystines-projects.vercel.app&muted=true"
           height="158"
           width="280"
           style={{ display: 'block', backgroundColor: '#000' }}
