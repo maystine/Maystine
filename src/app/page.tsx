@@ -208,7 +208,7 @@ export default function HomePage() {
 
           {/* Chat */}
           <iframe
-            src="https://www.twitch.tv/embed/Maystine/chat?parent=maystine-cxlj8xltw-maystines-projects.vercel.app&darkpopout"
+            src="https://www.twitch.tv/embed/Maystine/chat?parent=maystine.vercel.app&darkpopout"
             height="220"
             width="100%"
             style={{ display: 'block', borderTop: '1px solid var(--border)' }}
