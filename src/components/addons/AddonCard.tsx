@@ -39,7 +39,7 @@ const CLASS_LABELS: Record<string, string> = {
 const CLASS_ICON_URL = (cls: string) =>
   cls === 'all'
     ? null
-    : `https://wow.zamimg.com/images/wow/icons/medium/classicon_${cls.replace('deathknight', 'deathknight').replace('demonhunter', 'demonhunter')}.jpg`
+    : `https://wow.zamimg.com/images/wow/icons/medium/classicon_${cls}.jpg`
 
 interface Profile {
   label: string
@@ -76,20 +76,21 @@ export default function AddonCard({ addon }: { addon: Addon }) {
   }
 
   const profile = addon.profiles[selectedProfile]
-  const uniqueClasses = [...new Set(addon.profiles.map((p) => p.class))]
+  const uniqueClasses = Array.from(new Set(addon.profiles.map((p) => p.class)))
 
   return (
     <>
       {/* CARD */}
-      <div style={{
-        backgroundColor: 'var(--bg-card)',
-        border: '1px solid var(--border)',
-        borderRadius: '12px',
-        overflow: 'hidden',
-        transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
+      <div
+        style={{
+          backgroundColor: 'var(--bg-card)',
+          border: '1px solid var(--border)',
+          borderRadius: '12px',
+          overflow: 'hidden',
+          transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
         onMouseEnter={e => {
           (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border-glow)'
           ;(e.currentTarget as HTMLDivElement).style.boxShadow = '0 0 24px rgba(124,58,237,0.15)'
@@ -116,7 +117,6 @@ export default function AddonCard({ addon }: { addon: Addon }) {
             letterSpacing: '0.1em',
           }}>{addon.name[0]}</div>
 
-          {/* Version badge */}
           <div style={{
             position: 'absolute',
             top: '10px',
@@ -133,8 +133,6 @@ export default function AddonCard({ addon }: { addon: Addon }) {
 
         {/* Content */}
         <div style={{ padding: '1.25rem', flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-
-          {/* Name */}
           <div>
             <h3 style={{ fontSize: '1rem', marginBottom: '6px', letterSpacing: '0.05em' }}>{addon.name}</h3>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{addon.description}</p>
@@ -144,7 +142,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.65rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginRight: '4px' }}>Classes</span>
             {uniqueClasses.map((cls) => (
-              <div key={cls} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <div key={cls}>
                 {CLASS_ICON_URL(cls) ? (
                   <img
                     src={CLASS_ICON_URL(cls)!}
@@ -156,6 +154,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                       borderRadius: '4px',
                       border: `1px solid ${CLASS_COLORS[cls] || '#fff'}44`,
                       boxShadow: `0 0 6px ${CLASS_COLORS[cls] || '#fff'}44`,
+                      display: 'block',
                     }}
                   />
                 ) : (
@@ -178,7 +177,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
           {/* Actions */}
           <div style={{ display: 'flex', gap: '8px', marginTop: 'auto', flexWrap: 'wrap' }}>
             <button
-              onClick={() => { setModalOpen(true); setSelectedProfile(0) }}
+              onClick={() => { setModalOpen(true); setSelectedProfile(0); setCopied(false); setShowFullString(false) }}
               style={{
                 flex: 1,
                 padding: '9px 16px',
@@ -199,7 +198,6 @@ export default function AddonCard({ addon }: { addon: Addon }) {
               📋 Copier le profil
             </button>
 
-            {/* External links */}
             <div style={{ display: 'flex', gap: '6px' }}>
               {addon.links.curseforge && (
                 <a href={addon.links.curseforge} target="_blank" rel="noopener noreferrer"
@@ -264,7 +262,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
               boxShadow: '0 0 48px rgba(124,58,237,0.25)',
             }}
           >
-            {/* Modal header */}
+            {/* Header */}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
               <h3 style={{ fontSize: '1rem', letterSpacing: '0.05em' }}>{addon.name}</h3>
               <button onClick={() => setModalOpen(false)}
@@ -313,22 +311,33 @@ export default function AddonCard({ addon }: { addon: Addon }) {
               </div>
             </div>
 
-            {/* String preview */}
-            <div style={{
-              padding: '10px 14px',
-              borderRadius: '8px',
-              backgroundColor: 'rgba(0,0,0,0.3)',
-              border: '1px solid var(--border)',
-              marginBottom: '1rem',
-              fontFamily: 'monospace',
-              fontSize: '0.72rem',
-              color: 'var(--muted)',
-              wordBreak: 'break-all',
-              maxHeight: showFullString ? '200px' : '40px',
-              overflow: showFullString ? 'auto' : 'hidden',
-              transition: 'max-height 0.3s ease',
-            }}>
-              {profile.string}
+            {/* String preview — cliquable pour copier */}
+            <div style={{ marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '0.7rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>
+                Profile String
+              </div>
+              <div
+                onClick={handleCopy}
+                title="Cliquer pour copier"
+                style={{
+                  padding: '10px 14px',
+                  borderRadius: '8px',
+                  backgroundColor: 'rgba(0,0,0,0.3)',
+                  border: `1px solid ${copied ? 'rgba(0,200,100,0.4)' : 'var(--border)'}`,
+                  fontFamily: 'monospace',
+                  fontSize: '0.72rem',
+                  color: copied ? '#00c864' : 'var(--muted)',
+                  wordBreak: 'break-all',
+                  maxHeight: showFullString ? '200px' : '40px',
+                  overflow: showFullString ? 'auto' : 'hidden',
+                  transition: 'all 0.3s ease',
+                  cursor: 'copy',
+                  userSelect: 'none',
+                  position: 'relative',
+                }}
+              >
+                {copied ? '✓ Copié !' : profile.string}
+              </div>
             </div>
 
             <button
@@ -338,7 +347,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
               {showFullString ? '▲ Réduire' : '▼ Voir la string complète'}
             </button>
 
-            {/* Copy button */}
+            {/* Bouton copier principal */}
             <button
               onClick={handleCopy}
               style={{
