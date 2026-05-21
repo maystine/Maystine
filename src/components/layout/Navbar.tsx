@@ -33,22 +33,25 @@ export default function Navbar() {
         alignItems: 'center',
         justifyContent: 'space-between',
       }}>
-        {/* Logo */}
+        {/* Logo avec avatar Twitch */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div style={{
             width: '32px',
             height: '32px',
             borderRadius: '6px',
-            background: 'linear-gradient(135deg, var(--accent), var(--accent-light))',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            overflow: 'hidden',
             boxShadow: '0 0 16px rgba(124, 58, 237, 0.5)',
-            fontSize: '14px',
-            fontWeight: 700,
-            color: '#fff',
-            fontFamily: 'Cinzel, serif',
-          }}>M</div>
+            border: '1px solid var(--border-glow)',
+            flexShrink: 0,
+          }}>
+            <img
+              src="https://unavatar.io/twitch/Maystine"
+              alt="Maystine"
+              width={32}
+              height={32}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+          </div>
           <span style={{
             fontFamily: 'Cinzel, serif',
             fontSize: '1rem',
@@ -83,7 +86,7 @@ export default function Navbar() {
             )
           })}
 
-          {/* Twitch status indicator */}
+          {/* Twitch button */}
           <a
             href="https://twitch.tv/Maystine"
             target="_blank"
