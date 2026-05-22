@@ -128,18 +128,6 @@ export default function AddonCard({ addon }: { addon: Addon }) {
             }}>{addon.name[0]}</div>
           )}
 
-          <div style={{
-            position: 'absolute',
-            top: '10px',
-            right: '10px',
-            padding: '3px 8px',
-            borderRadius: '4px',
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            border: '1px solid var(--border)',
-            fontSize: '0.65rem',
-            color: 'var(--muted)',
-            letterSpacing: '0.05em',
-          }}>v{addon.version}</div>
         </div>
 
         {/* Content */}
@@ -214,7 +202,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
               onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
               onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
             >
-              {addon.profiles.length === 1 && copied ? '✓ Copié !' : '📋 Copier le profil'}
+              {addon.profiles.length === 1 && copied ? 'Copié !' : 'Copier le profil'}
             </button>
 
             <div style={{ display: 'flex', gap: '6px' }}>
@@ -320,7 +308,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                         border: `1px solid ${CLASS_COLORS[p.class]}44`,
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         fontSize: '0.6rem', color: CLASS_COLORS[p.class],
-                      }}>✦</div>
+                      }}></div>
                     )}
                     <span style={{ fontSize: '0.82rem', color: selectedProfile === i ? CLASS_COLORS[p.class] : 'var(--text)', fontWeight: selectedProfile === i ? 500 : 300 }}>
                       {p.label}
@@ -355,7 +343,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                   position: 'relative',
                 }}
               >
-                {copied ? '✓ Copié !' : profile.string}
+                {copied ? 'Copié !' : profile.string}
               </div>
             </div>
 
@@ -384,7 +372,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                 boxShadow: copied ? 'none' : '0 0 20px rgba(124,58,237,0.35)',
               }}
             >
-              {copied ? '✓ Copié dans le presse-papier !' : '📋 Copier le profil'}
+              {copied ? 'Copié dans le presse-papier !' : 'Copier le profil'}
             </button>
           </div>
         </div>
