@@ -92,18 +92,18 @@ export default function Navbar() {
             href="https://www.youtube.com/@MaystineTv"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-social"
+            className="btn-youtube"
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
               padding: '6px 14px',
               borderRadius: '6px',
-              border: '1px solid var(--border-glow)',
-              backgroundColor: 'rgba(124, 58, 237, 0.08)',
+              border: '1px solid rgba(255, 60, 60, 0.35)',
+              backgroundColor: 'rgba(255, 40, 40, 0.07)',
               fontSize: '0.75rem',
               letterSpacing: '0.08em',
-              color: 'var(--accent-light)',
+              color: '#ff6b6b',
               transition: 'all 0.2s ease',
             }}
           >
@@ -118,18 +118,18 @@ export default function Navbar() {
             href="https://twitch.tv/Maystine"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-social"
+            className="btn-twitch"
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
               padding: '6px 14px',
               borderRadius: '6px',
-              border: '1px solid var(--border-glow)',
-              backgroundColor: 'rgba(124, 58, 237, 0.08)',
+              border: '1px solid rgba(145, 70, 255, 0.35)',
+              backgroundColor: 'rgba(145, 70, 255, 0.07)',
               fontSize: '0.75rem',
               letterSpacing: '0.08em',
-              color: 'var(--accent-light)',
+              color: '#b380ff',
               transition: 'all 0.2s ease',
             }}
           >
