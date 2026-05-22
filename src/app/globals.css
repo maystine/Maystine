@@ -94,18 +94,10 @@ a {
 .fade-up-delay-4 { animation-delay: 0.5s; opacity: 0; }
 
 /* Button hovers */
-.btn-youtube:hover {
-  background-color: rgba(255, 40, 40, 0.15) !important;
-  border-color: rgba(255, 60, 60, 0.7) !important;
-  color: #ff4444 !important;
-  box-shadow: 0 0 16px rgba(255, 40, 40, 0.25);
-}
-
-.btn-twitch:hover {
-  background-color: rgba(145, 70, 255, 0.15) !important;
-  border-color: rgba(145, 70, 255, 0.7) !important;
-  color: #bf94ff !important;
-  box-shadow: 0 0 16px rgba(145, 70, 255, 0.3);
+.btn-social:hover {
+  background-color: rgba(124, 58, 237, 0.18) !important;
+  border-color: var(--accent-light) !important;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.3);
 }
 
 .btn-primary:hover {
