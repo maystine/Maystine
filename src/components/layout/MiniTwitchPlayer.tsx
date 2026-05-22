@@ -7,9 +7,6 @@ export default function MiniTwitchPlayer() {
   const pathname = usePathname()
   const [minimized, setMinimized] = useState(false)
 
-  // On the home page, the big Twitch embed is shown instead
-  if (pathname === '/') return null
-
   return (
     <div style={{
       position: 'fixed',
