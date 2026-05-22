@@ -68,6 +68,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
   const [selectedProfile, setSelectedProfile] = useState(0)
   const [copied, setCopied] = useState(false)
   const [showFullString, setShowFullString] = useState(false)
+  const [imageError, setImageError] = useState(false)
 
   const handleCopy = () => {
     navigator.clipboard.writeText(addon.profiles[selectedProfile].string)
@@ -100,7 +101,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
           ;(e.currentTarget as HTMLDivElement).style.boxShadow = 'none'
         }}
       >
-        {/* Image placeholder */}
+        {/* Image */}
         <div style={{
           height: '160px',
           background: 'linear-gradient(135deg, #1a1035 0%, #0e0d1a 100%)',
@@ -109,13 +110,23 @@ export default function AddonCard({ addon }: { addon: Addon }) {
           alignItems: 'center',
           justifyContent: 'center',
           borderBottom: '1px solid var(--border)',
+          overflow: 'hidden',
         }}>
-          <div style={{
-            fontFamily: 'Cinzel, serif',
-            fontSize: '2rem',
-            color: 'rgba(124,58,237,0.3)',
-            letterSpacing: '0.1em',
-          }}>{addon.name[0]}</div>
+          {addon.image && !imageError ? (
+            <img
+              src={addon.image}
+              alt={addon.name}
+              onError={() => setImageError(true)}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            />
+          ) : (
+            <div style={{
+              fontFamily: 'Cinzel, serif',
+              fontSize: '2rem',
+              color: 'rgba(124,58,237,0.3)',
+              letterSpacing: '0.1em',
+            }}>{addon.name[0]}</div>
+          )}
 
           <div style={{
             position: 'absolute',
@@ -177,25 +188,33 @@ export default function AddonCard({ addon }: { addon: Addon }) {
           {/* Actions */}
           <div style={{ display: 'flex', gap: '8px', marginTop: 'auto', flexWrap: 'wrap' }}>
             <button
-              onClick={() => { setModalOpen(true); setSelectedProfile(0); setCopied(false); setShowFullString(false) }}
+              onClick={() => {
+                if (addon.profiles.length === 1) {
+                  handleCopy()
+                } else {
+                  setModalOpen(true); setSelectedProfile(0); setCopied(false); setShowFullString(false)
+                }
+              }}
               style={{
                 flex: 1,
                 padding: '9px 16px',
                 borderRadius: '7px',
-                background: 'linear-gradient(135deg, var(--accent), var(--accent-light))',
-                border: 'none',
-                color: '#fff',
+                background: addon.profiles.length === 1 && copied
+                  ? 'rgba(0,200,100,0.15)'
+                  : 'linear-gradient(135deg, var(--accent), var(--accent-light))',
+                border: addon.profiles.length === 1 && copied ? '1px solid rgba(0,200,100,0.4)' : 'none',
+                color: addon.profiles.length === 1 && copied ? '#00c864' : '#fff',
                 fontSize: '0.78rem',
                 letterSpacing: '0.06em',
                 cursor: 'pointer',
                 fontWeight: 500,
-                boxShadow: '0 0 16px rgba(124,58,237,0.3)',
+                boxShadow: addon.profiles.length === 1 && copied ? 'none' : '0 0 16px rgba(124,58,237,0.3)',
                 transition: 'opacity 0.2s',
               }}
               onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
               onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
             >
-              📋 Copier le profil
+              {addon.profiles.length === 1 && copied ? '✓ Copié !' : '📋 Copier le profil'}
             </button>
 
             <div style={{ display: 'flex', gap: '6px' }}>
