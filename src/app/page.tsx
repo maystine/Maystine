@@ -103,6 +103,7 @@ export default function HomePage() {
         >
           <a
             href="/addons"
+            className="btn-primary"
             style={{
               padding: '12px 28px',
               borderRadius: '8px',
@@ -120,6 +121,7 @@ export default function HomePage() {
           </a>
           <a
             href="/parcours"
+            className="btn-secondary"
             style={{
               padding: '12px 28px',
               borderRadius: '8px',

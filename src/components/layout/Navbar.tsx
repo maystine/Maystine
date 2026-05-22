@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 const links = [
   { href: '/', label: 'Accueil' },
   { href: '/addons', label: 'Addons' },
+  { href: '/coaching', label: 'Coaching' },
   { href: '/parcours', label: 'Parcours' },
 ]
 
@@ -91,6 +92,7 @@ export default function Navbar() {
             href="https://www.youtube.com/@MaystineTv"
             target="_blank"
             rel="noopener noreferrer"
+            className="btn-social"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -116,6 +118,7 @@ export default function Navbar() {
             href="https://twitch.tv/Maystine"
             target="_blank"
             rel="noopener noreferrer"
+            className="btn-social"
             style={{
               display: 'flex',
               alignItems: 'center',
