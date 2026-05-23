@@ -41,6 +41,11 @@ const CLASS_ICON_URL = (cls: string) =>
     ? null
     : `https://wow.zamimg.com/images/wow/icons/medium/classicon_${cls}.jpg`
 
+const SPEC_ICON_URL = (cls: string, spec: string) =>
+  cls === 'all' || !spec || spec === 'all'
+    ? null
+    : `https://wow.zamimg.com/images/wow/icons/medium/classicon_${cls}_${spec}.jpg`
+
 interface Profile {
   label: string
   class: string
@@ -78,7 +83,6 @@ export default function AddonCard({ addon }: { addon: Addon }) {
   }
 
   const profile = addon.profiles[selectedProfile]
-  const uniqueClasses = Array.from(new Set(addon.profiles.map((p) => p.class)))
 
   return (
     <>
@@ -138,40 +142,60 @@ export default function AddonCard({ addon }: { addon: Addon }) {
             <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{addon.description}</p>
           </div>
 
-          {/* Class icons */}
+          {/* Spec icons */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.65rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginRight: '4px' }}>Classes</span>
-            {uniqueClasses.map((cls) => (
-              <div key={cls}>
-                {CLASS_ICON_URL(cls) ? (
-                  <img
-                    src={CLASS_ICON_URL(cls)!}
-                    alt={CLASS_LABELS[cls] || cls}
-                    title={CLASS_LABELS[cls] || cls}
-                    width={20}
-                    height={20}
-                    style={{
-                      borderRadius: '4px',
-                      border: `1px solid ${CLASS_COLORS[cls] || '#fff'}44`,
-                      boxShadow: `0 0 6px ${CLASS_COLORS[cls] || '#fff'}44`,
-                      display: 'block',
-                    }}
-                  />
-                ) : (
-                  <div style={{
-                    padding: '2px 8px',
+            <span style={{ fontSize: '0.65rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginRight: '4px' }}>Specs</span>
+            {addon.profiles.map((p, i) => {
+              const specUrl = SPEC_ICON_URL(p.class, p.spec)
+              const classUrl = CLASS_ICON_URL(p.class)
+              const color = CLASS_COLORS[p.class] || '#fff'
+              if (specUrl) return (
+                <img
+                  key={i}
+                  src={specUrl}
+                  alt={p.label}
+                  title={p.label}
+                  width={20}
+                  height={20}
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).src = classUrl || '' }}
+                  style={{
                     borderRadius: '4px',
-                    border: `1px solid ${CLASS_COLORS[cls] || '#fff'}44`,
-                    backgroundColor: `${CLASS_COLORS[cls] || '#fff'}11`,
-                    fontSize: '0.65rem',
-                    color: CLASS_COLORS[cls] || '#fff',
-                    letterSpacing: '0.05em',
-                  }}>
-                    {CLASS_LABELS[cls] || cls}
-                  </div>
-                )}
-              </div>
-            ))}
+                    border: `1px solid ${color}44`,
+                    boxShadow: `0 0 6px ${color}44`,
+                    display: 'block',
+                  }}
+                />
+              )
+              if (classUrl) return (
+                <img
+                  key={i}
+                  src={classUrl}
+                  alt={p.label}
+                  title={p.label}
+                  width={20}
+                  height={20}
+                  style={{
+                    borderRadius: '4px',
+                    border: `1px solid ${color}44`,
+                    boxShadow: `0 0 6px ${color}44`,
+                    display: 'block',
+                  }}
+                />
+              )
+              return (
+                <div key={i} style={{
+                  padding: '2px 8px',
+                  borderRadius: '4px',
+                  border: `1px solid ${color}44`,
+                  backgroundColor: `${color}11`,
+                  fontSize: '0.65rem',
+                  color,
+                  letterSpacing: '0.05em',
+                }}>
+                  {p.label}
+                </div>
+              )
+            })}
           </div>
 
           {/* Actions */}
@@ -300,19 +324,29 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                       transition: 'all 0.15s ease',
                     }}
                   >
-                    {!addon.hideProfileIcon && (
-                      CLASS_ICON_URL(p.class) ? (
-                        <img src={CLASS_ICON_URL(p.class)!} alt={CLASS_LABELS[p.class]} width={22} height={22} style={{ borderRadius: '4px' }} />
-                      ) : (
+                    {!addon.hideProfileIcon && (() => {
+                      const specUrl = SPEC_ICON_URL(p.class, p.spec)
+                      const classUrl = CLASS_ICON_URL(p.class)
+                      const iconUrl = specUrl || classUrl
+                      if (iconUrl) return (
+                        <img
+                          src={iconUrl}
+                          alt={p.label}
+                          width={22}
+                          height={22}
+                          onError={(e) => { if (specUrl && classUrl) (e.currentTarget as HTMLImageElement).src = classUrl }}
+                          style={{ borderRadius: '4px', flexShrink: 0 }}
+                        />
+                      )
+                      return (
                         <div style={{
                           width: 22, height: 22, borderRadius: '4px',
                           backgroundColor: `${CLASS_COLORS[p.class]}22`,
                           border: `1px solid ${CLASS_COLORS[p.class]}44`,
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          fontSize: '0.6rem', color: CLASS_COLORS[p.class],
-                        }}></div>
+                          flexShrink: 0,
+                        }} />
                       )
-                    )}
+                    })()}
                     <span style={{ fontSize: '0.82rem', color: selectedProfile === i ? CLASS_COLORS[p.class] : 'var(--text)', fontWeight: selectedProfile === i ? 500 : 300 }}>
                       {p.label}
                     </span>
