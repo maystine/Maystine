@@ -33,7 +33,6 @@ export default function Navbar() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        position: 'relative',
       }}>
         {/* Logo - gauche */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -63,15 +62,8 @@ export default function Navbar() {
           }}>Maystine</span>
         </Link>
 
-        {/* Nav links - centre absolu */}
-        <div style={{
-          position: 'absolute',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '2rem',
-        }}>
+        {/* Nav links + boutons réseaux - droite */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           {links.map((link) => {
             const isActive = pathname === link.href
             return (
@@ -95,10 +87,12 @@ export default function Navbar() {
               </Link>
             )
           })}
-        </div>
 
-        {/* Boutons réseaux - droite */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', justifyContent: 'flex-end' }}>
+          {/* Séparateur */}
+          <div style={{ width: '1px', height: '20px', backgroundColor: 'var(--border-glow)', flexShrink: 0 }} />
+
+          {/* Boutons réseaux */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
 
           {/* YouTube */}
           <a
@@ -224,6 +218,7 @@ export default function Navbar() {
             </svg>
             <span style={{ color: 'var(--accent-light)' }}>Discord</span>
           </a>
+          </div>
         </div>
       </div>
     </nav>
