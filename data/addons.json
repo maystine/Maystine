@@ -164,7 +164,7 @@
   {
     "id": "sensei",
     "name": "Sensei Class Resource Bar",
-    "description": "Barres de ressources personnalisées — barre de vie, ressource principale et ressource secondaire. Un string dédié pour chaque barre, totalement modulaire.",
+    "description": "Barres de ressources personnalisées: barre de vie, ressource principale et ressource secondaire. Un string dédié pour chaque barre.",
     "version": "1.0.0",
     "wowVersion": "11.1.0",
     "image": "/images/addons/sensei.png",
