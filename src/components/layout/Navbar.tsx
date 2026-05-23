@@ -30,9 +30,10 @@ export default function Navbar() {
         margin: '0 auto',
         padding: '0 2rem',
         height: '64px',
-        display: 'grid',
-        gridTemplateColumns: '1fr auto 1fr',
+        display: 'flex',
         alignItems: 'center',
+        justifyContent: 'space-between',
+        position: 'relative',
       }}>
         {/* Logo - gauche */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -62,8 +63,15 @@ export default function Navbar() {
           }}>Maystine</span>
         </Link>
 
-        {/* Nav links - centre */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+        {/* Nav links - centre absolu */}
+        <div style={{
+          position: 'absolute',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '2rem',
+        }}>
           {links.map((link) => {
             const isActive = pathname === link.href
             return (
