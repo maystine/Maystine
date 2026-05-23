@@ -30,11 +30,11 @@ export default function Navbar() {
         margin: '0 auto',
         padding: '0 2rem',
         height: '64px',
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: '1fr auto 1fr',
         alignItems: 'center',
-        justifyContent: 'space-between',
       }}>
-        {/* Logo avec avatar Twitch */}
+        {/* Logo - gauche */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div style={{
             width: '32px',
@@ -62,7 +62,7 @@ export default function Navbar() {
           }}>Maystine</span>
         </Link>
 
-        {/* Nav links */}
+        {/* Nav links - centre */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           {links.map((link) => {
             const isActive = pathname === link.href
@@ -70,13 +70,14 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                className="nav-link"
                 style={{
                   fontSize: '0.8rem',
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
                   color: isActive ? 'var(--accent-light)' : 'var(--text-secondary)',
                   fontWeight: isActive ? 500 : 300,
-                  transition: 'color 0.2s ease',
+                  transition: 'color 0.2s ease, border-bottom-color 0.2s ease',
                   position: 'relative',
                   paddingBottom: '2px',
                   borderBottom: isActive ? '1px solid var(--accent-light)' : '1px solid transparent',
@@ -86,8 +87,12 @@ export default function Navbar() {
               </Link>
             )
           })}
+        </div>
 
-          {/* YouTube button */}
+        {/* Boutons réseaux - droite */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', justifyContent: 'flex-end' }}>
+
+          {/* YouTube */}
           <a
             href="https://www.youtube.com/@MaystineTv"
             target="_blank"
@@ -97,7 +102,7 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              padding: '6px 14px',
+              padding: '6px 12px',
               borderRadius: '6px',
               border: '1px solid var(--border-glow)',
               backgroundColor: 'rgba(124, 58, 237, 0.08)',
@@ -112,7 +117,7 @@ export default function Navbar() {
             <span style={{ color: 'var(--accent-light)' }}>YouTube</span>
           </a>
 
-          {/* Twitch button */}
+          {/* Twitch */}
           <a
             href="https://twitch.tv/Maystine"
             target="_blank"
@@ -122,7 +127,7 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              padding: '6px 14px',
+              padding: '6px 12px',
               borderRadius: '6px',
               border: '1px solid var(--border-glow)',
               backgroundColor: 'rgba(124, 58, 237, 0.08)',
@@ -137,7 +142,7 @@ export default function Navbar() {
             <span style={{ color: 'var(--accent-light)' }}>Twitch</span>
           </a>
 
-          {/* Twitter/X button */}
+          {/* Twitter/X */}
           <a
             href="https://x.com/Maystine_"
             target="_blank"
@@ -147,7 +152,7 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              padding: '6px 14px',
+              padding: '6px 12px',
               borderRadius: '6px',
               border: '1px solid var(--border-glow)',
               backgroundColor: 'rgba(124, 58, 237, 0.08)',
@@ -162,7 +167,7 @@ export default function Navbar() {
             <span style={{ color: 'var(--accent-light)' }}>Twitter</span>
           </a>
 
-          {/* Instagram button */}
+          {/* Instagram */}
           <a
             href="https://www.instagram.com/maystine_/"
             target="_blank"
@@ -172,7 +177,7 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              padding: '6px 14px',
+              padding: '6px 12px',
               borderRadius: '6px',
               border: '1px solid var(--border-glow)',
               backgroundColor: 'rgba(124, 58, 237, 0.08)',
@@ -187,7 +192,7 @@ export default function Navbar() {
             <span style={{ color: 'var(--accent-light)' }}>Instagram</span>
           </a>
 
-          {/* Discord button */}
+          {/* Discord */}
           <a
             href="https://discord.gg/AnJ7x4jpGG"
             target="_blank"
@@ -197,7 +202,7 @@ export default function Navbar() {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              padding: '6px 14px',
+              padding: '6px 12px',
               borderRadius: '6px',
               border: '1px solid var(--border-glow)',
               backgroundColor: 'rgba(124, 58, 237, 0.08)',

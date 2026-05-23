@@ -93,6 +93,12 @@ a {
 .fade-up-delay-3 { animation-delay: 0.35s; opacity: 0; }
 .fade-up-delay-4 { animation-delay: 0.5s; opacity: 0; }
 
+/* Nav link hover */
+.nav-link:hover {
+  color: var(--text-bright) !important;
+  border-bottom-color: rgba(168, 85, 247, 0.4) !important;
+}
+
 /* Button hovers */
 .btn-social:hover {
   background-color: rgba(124, 58, 237, 0.18) !important;
