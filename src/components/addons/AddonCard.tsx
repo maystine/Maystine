@@ -176,7 +176,6 @@ export default function AddonCard({ addon }: { addon: Addon }) {
 
           {/* Spec icons */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.65rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginRight: '4px' }}>Specs</span>
             {addon.profiles.map((p, i) => {
               const specUrl = SPEC_ICON_URL(p.class, p.spec)
               const classUrl = CLASS_ICON_URL(p.class)
