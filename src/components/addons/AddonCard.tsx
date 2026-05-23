@@ -120,6 +120,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
     <>
       {/* CARD */}
       <div
+        onClick={() => { setModalOpen(true); setSelectedProfile(0); setCopied(false) }}
         style={{
           backgroundColor: 'var(--bg-card)',
           border: '1px solid var(--border)',
@@ -128,6 +129,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
           transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
           display: 'flex',
           flexDirection: 'column',
+          cursor: 'pointer',
         }}
         onMouseEnter={e => {
           (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--border-glow)'
@@ -230,39 +232,9 @@ export default function AddonCard({ addon }: { addon: Addon }) {
             })}
           </div>
 
-          {/* Actions */}
-          <div style={{ display: 'flex', gap: '8px', marginTop: 'auto', flexWrap: 'wrap' }}>
-            <button
-              onClick={() => {
-                if (addon.profiles.length === 1) {
-                  handleCopy()
-                } else {
-                  setModalOpen(true); setSelectedProfile(0); setCopied(false); setShowFullString(false)
-                }
-              }}
-              style={{
-                flex: 1,
-                padding: '9px 16px',
-                borderRadius: '7px',
-                background: addon.profiles.length === 1 && copied
-                  ? 'rgba(0,200,100,0.15)'
-                  : 'linear-gradient(135deg, var(--accent), var(--accent-light))',
-                border: addon.profiles.length === 1 && copied ? '1px solid rgba(0,200,100,0.4)' : 'none',
-                color: addon.profiles.length === 1 && copied ? '#00c864' : '#fff',
-                fontSize: '0.78rem',
-                letterSpacing: '0.06em',
-                cursor: 'pointer',
-                fontWeight: 500,
-                boxShadow: addon.profiles.length === 1 && copied ? 'none' : '0 0 16px rgba(124,58,237,0.3)',
-                transition: 'opacity 0.2s',
-              }}
-              onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
-              onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
-            >
-              {addon.profiles.length === 1 && copied ? 'Copié !' : 'Copier le profil'}
-            </button>
-
-            <div style={{ display: 'flex', gap: '6px' }}>
+          {/* Links */}
+          {(addon.links.curseforge || addon.links.wago) && (
+            <div style={{ display: 'flex', gap: '6px', marginTop: 'auto' }} onClick={e => e.stopPropagation()}>
               {addon.links.curseforge && (
                 <a href={addon.links.curseforge} target="_blank" rel="noopener noreferrer"
                   title="CurseForge"
@@ -298,7 +270,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                 >Wago</a>
               )}
             </div>
-          </div>
+          )}
         </div>
       </div>
 
