@@ -98,6 +98,7 @@ a {
   background-color: rgba(124, 58, 237, 0.18) !important;
   border-color: var(--accent-light) !important;
   box-shadow: 0 0 16px rgba(168, 85, 247, 0.3);
+  transform: translateY(-2px);
 }
 
 .btn-primary:hover {
