@@ -114,7 +114,6 @@ export default function AddonCard({ addon }: { addon: Addon }) {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedProfile, setSelectedProfile] = useState(0)
   const [copied, setCopied] = useState(false)
-  const [showFullString, setShowFullString] = useState(false)
   const [imageError, setImageError] = useState(false)
 
   const handleCopy = () => {
@@ -343,26 +342,32 @@ export default function AddonCard({ addon }: { addon: Addon }) {
             </div>
 
             {/* Profile selector */}
-            <div style={{ marginBottom: '1.25rem' }}>
+            <div style={{ marginBottom: '1rem' }}>
               <div style={{ fontSize: '0.7rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>
-                Sélectionner un profil
+                Choisir un profil
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                 {addon.profiles.map((p, i) => (
                   <button
                     key={i}
-                    onClick={() => { setSelectedProfile(i); setShowFullString(false); setCopied(false) }}
+                    onClick={() => {
+                      setSelectedProfile(i)
+                      navigator.clipboard.writeText(p.string)
+                      setCopied(true)
+                      setTimeout(() => setCopied(false), 2000)
+                    }}
                     style={{
                       padding: '10px 14px',
                       borderRadius: '8px',
-                      border: `1px solid ${selectedProfile === i ? CLASS_COLORS[p.class] + '66' : 'var(--border)'}`,
-                      backgroundColor: selectedProfile === i ? `${CLASS_COLORS[p.class]}11` : 'transparent',
+                      border: `1px solid ${selectedProfile === i && copied ? 'rgba(0,200,100,0.5)' : selectedProfile === i ? CLASS_COLORS[p.class] + '66' : 'var(--border)'}`,
+                      backgroundColor: selectedProfile === i && copied ? 'rgba(0,200,100,0.08)' : selectedProfile === i ? `${CLASS_COLORS[p.class]}11` : 'transparent',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '10px',
                       textAlign: 'left',
                       transition: 'all 0.15s ease',
+                      width: '100%',
                     }}
                   >
                     {!addon.hideProfileIcon && (() => {
@@ -388,70 +393,20 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                         }} />
                       )
                     })()}
-                    <span style={{ fontSize: '0.82rem', color: selectedProfile === i ? CLASS_COLORS[p.class] : 'var(--text)', fontWeight: selectedProfile === i ? 500 : 300 }}>
-                      {p.label}
+                    <span style={{ fontSize: '0.82rem', color: selectedProfile === i && copied ? '#00c864' : selectedProfile === i ? CLASS_COLORS[p.class] : 'var(--text)', fontWeight: selectedProfile === i ? 500 : 300, flex: 1 }}>
+                      {selectedProfile === i && copied ? 'Copié !' : p.label}
                     </span>
+                    {selectedProfile === i && copied && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#00c864"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    )}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* String preview — cliquable pour copier */}
-            <div style={{ marginBottom: '0.5rem' }}>
-              <div style={{ fontSize: '0.7rem', color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '8px' }}>
-                Profile String
-              </div>
-              <div
-                onClick={handleCopy}
-                title="Cliquer pour copier"
-                style={{
-                  padding: '10px 14px',
-                  borderRadius: '8px',
-                  backgroundColor: 'rgba(0,0,0,0.3)',
-                  border: `1px solid ${copied ? 'rgba(0,200,100,0.4)' : 'var(--border)'}`,
-                  fontFamily: 'monospace',
-                  fontSize: '0.72rem',
-                  color: copied ? '#00c864' : 'var(--muted)',
-                  wordBreak: 'break-all',
-                  maxHeight: showFullString ? '200px' : '40px',
-                  overflow: showFullString ? 'auto' : 'hidden',
-                  transition: 'all 0.3s ease',
-                  cursor: 'copy',
-                  userSelect: 'none',
-                  position: 'relative',
-                }}
-              >
-                {copied ? 'Copié !' : profile.string}
-              </div>
+            <div style={{ fontSize: '0.68rem', color: 'var(--muted)', textAlign: 'center', marginTop: '0.5rem' }}>
+              Cliquer sur un profil pour copier la string
             </div>
-
-            <button
-              onClick={() => setShowFullString(!showFullString)}
-              style={{ background: 'none', border: 'none', color: 'var(--muted)', fontSize: '0.72rem', cursor: 'pointer', marginBottom: '1rem', padding: 0 }}
-            >
-              {showFullString ? '▲ Réduire' : '▼ Voir la string complète'}
-            </button>
-
-            {/* Bouton copier principal */}
-            <button
-              onClick={handleCopy}
-              style={{
-                width: '100%',
-                padding: '12px',
-                borderRadius: '8px',
-                background: copied ? 'rgba(0,200,100,0.15)' : 'linear-gradient(135deg, var(--accent), var(--accent-light))',
-                border: copied ? '1px solid rgba(0,200,100,0.4)' : 'none',
-                color: copied ? '#00c864' : '#fff',
-                fontSize: '0.85rem',
-                fontWeight: 500,
-                letterSpacing: '0.08em',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                boxShadow: copied ? 'none' : '0 0 20px rgba(124,58,237,0.35)',
-              }}
-            >
-              {copied ? 'Copié dans le presse-papier !' : 'Copier le profil'}
-            </button>
           </div>
         </div>
       )}
