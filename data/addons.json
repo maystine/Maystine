@@ -87,6 +87,7 @@
     "version": "1.0.0",
     "wowVersion": "11.1.0",
     "image": "/images/addons/sensei.png",
+    "hideProfileIcon": true,
     "profiles": [
       {
         "label": "Barre de vie",

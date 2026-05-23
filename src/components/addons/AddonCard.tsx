@@ -55,6 +55,7 @@ interface Addon {
   version: string
   wowVersion: string
   image: string
+  hideProfileIcon?: boolean
   profiles: Profile[]
   links: {
     curseforge?: string
@@ -299,16 +300,18 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                       transition: 'all 0.15s ease',
                     }}
                   >
-                    {CLASS_ICON_URL(p.class) ? (
-                      <img src={CLASS_ICON_URL(p.class)!} alt={CLASS_LABELS[p.class]} width={22} height={22} style={{ borderRadius: '4px' }} />
-                    ) : (
-                      <div style={{
-                        width: 22, height: 22, borderRadius: '4px',
-                        backgroundColor: `${CLASS_COLORS[p.class]}22`,
-                        border: `1px solid ${CLASS_COLORS[p.class]}44`,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: '0.6rem', color: CLASS_COLORS[p.class],
-                      }}></div>
+                    {!addon.hideProfileIcon && (
+                      CLASS_ICON_URL(p.class) ? (
+                        <img src={CLASS_ICON_URL(p.class)!} alt={CLASS_LABELS[p.class]} width={22} height={22} style={{ borderRadius: '4px' }} />
+                      ) : (
+                        <div style={{
+                          width: 22, height: 22, borderRadius: '4px',
+                          backgroundColor: `${CLASS_COLORS[p.class]}22`,
+                          border: `1px solid ${CLASS_COLORS[p.class]}44`,
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontSize: '0.6rem', color: CLASS_COLORS[p.class],
+                        }}></div>
+                      )
                     )}
                     <span style={{ fontSize: '0.82rem', color: selectedProfile === i ? CLASS_COLORS[p.class] : 'var(--text)', fontWeight: selectedProfile === i ? 500 : 300 }}>
                       {p.label}
