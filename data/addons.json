@@ -2,7 +2,7 @@
   {
     "id": "cooldown-manager",
     "name": "Cooldown Manager",
-    "description": "Suivi des cooldowns offensifs et défensifs pour le haut niveau. Un profil dédié par spécialisation pour un tracking précis en Mythic+.",
+    "description": "Suivi des cooldowns offensifs et défensifs. Un profil dédié par spécialisation.",
     "version": "1.0.0",
     "wowVersion": "11.1.0",
     "image": "/images/addons/cooldown-manager.png",
@@ -11,25 +11,25 @@
         "label": "Feral",
         "class": "druid",
         "spec": "feral",
-        "string": ""
+        "string": "1|ZZFLKERhGIbnjP8cxcJGh3dWZ9xLNlY2dkNZ2CgadkKTW6GUkaQJ41JuMazUuJUSG5eNy9JKkrJgNhqFw8JqykL53nOclc3zfv9/zvd9f+87qSaShQOxTGyjDWoEaifg0556BOE72C+i5jKxKujPgZ4NHdArebUGNQc1C3XP0wrUvGhfEHqtaLoGm4NQoxj3Q43JRe8hVFz0uVrQvoezNNQ2VFJOqVaoGagoDHb2HnBMGYwEtYQoJkph5IgWhKE/iEZ8MNYDPn9TA3uOBI9LrN4Im/hg1zWrd1YV0Lf50HPoX9RL4opfLEFHij9+oi4PoWZeliPUwj84yuQok1NS33QmzXcUEQvEIsHl/VsEt0Q0Ip9tF9DFGP/tDRe8SnWiET7B8b7gNJfHsCD+s6vFPPuyJv8vNm3/lDfKvPib566JaFbCtV+NOW7ee14/9UhITkJuqCrJ3OwXJ5kdCcUNzkmYIY140USD05KIuO5EIUaL8eJ5LNMYGhru7rSqrPquofa+Xw=="
       },
       {
         "label": "Moonkin",
         "class": "druid",
         "spec": "balance",
-        "string": ""
+        "string": "1|VZG9S4JxEMe9x5aG3Io7qbClKesfqAaflkIMoiRH8wUC05Lc06RFyoYGaZNokFpDaNWlN3DNCowaGtPIoqn7/rCh5XP3u+d+L/d58n07ZU5lc6Vlt4NCZa7xCT9zkI85ooXHCreFWLPEmZBTyEKXS7H6wx2OCxWFKkL7HBWqCR0I1Tkm1SOhbW5o28Mln8vCrGatgrxVNW7MANMcYL9YA2K5hGwcOsgZIS++BYEkkAI2gS201PGOK7fDWnoXO47KhKLZQvkWuANugGtsWkHLkFgmDgMjwKhi7QV4xXIcwMWhSWAKw32L3Y8T0mIXND7No9gFPoEv4EN8h+K70Oc0mopcFdn9KeXUYM3Ks98MywEzrnP3/+aupyTc6XmtqBkVpp5UMAxGjTnVaowWOa4SyWkkGvXmJxjhrK65wTFuj+2pPs782elNXc8uzqUz61GP1+MLJ8LJSOwX"
       },
       {
         "label": "Guardian",
         "class": "druid",
         "spec": "guardian",
-        "string": ""
+        "string": "1|PZG/L0NRGIbrtomvt12aGO57Y6iE8g8YWMSiMRMqfuQuBkxisIk0YsAf0EXkxlATm1EMTCZdDXrbqmpHbAbvW63lOd97zrlfvvPco8Rh6O2G8WJpHoUHFB7hnsJasCqSGbhnfmwg2PZjznMOJ5MKO9gfZfZawofQ5rZliMGOoJh0VOl0YYqV8wNrw2qwBg7Ube4J9sr19lr3WnCnkZ2BOw7rwJqwCFaHJdRd17wq0gFSeZY3e0R+SJs1jbMoLDFOXKhaFlYYc2+stu5YVT41/hjji6/4hVSgs3v1iIS60BD0UbCK9LnWNWFd2NDZu8AXOsNl4QqudirflyPH3UHYtj8iG3Bgp9i/ki15vddb81+HNNJWVwj9Ucjfi+UmopGeRhqklZ5OKpal7p+gNjqzehif3fwF"
       },
       {
         "label": "Heal",
         "class": "druid",
         "spec": "restoration",
-        "string": ""
+        "string": "1|TZC/S0JRGIbVHArc87UGz7kGQZuFBRYWhWnZDRtqTdBAggSzXUqKgpaWWkWa+gNqaKqhgqBfmFRQac2W/QP2vVeCluee7zv3vOc7T8GZL7qzRef6gemx2RP3xDlxQbwQz0SFeMJxGMqEDrJ6IG6JN4/NEe9Cs4RmnfUjtBtqGioKFWbjFSoENQLjDmoMGtAeqIjsVDe5fUlcEx9QM1Cj0J2sykQNahI6D2OH1btcVWkXBI4EMTt7n7Ly73F1xcgt/tIh6O8WDJxxd5ZwofcGxrAstw/ROGWrzKQUfDW+ICkYDMBYlJSleRgmjKq0hsYF9TZiSvDlQ88yv8R3QdBYIDjFTx9xUlK71oTWeUZZ+f6yRP4NE7O3UqxL/S7rBXKzY+PfgN590cfXq4glPmo5FT9my7eoVCFLItWLchErhpt1qtaelngdFJmitOiMz6VWc5lsIpfOrHgnsmvp5C8="
       },
       {
         "label": "Devastation",
