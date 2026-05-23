@@ -116,14 +116,6 @@ export default function AddonCard({ addon }: { addon: Addon }) {
   const [copied, setCopied] = useState(false)
   const [imageError, setImageError] = useState(false)
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(addon.profiles[selectedProfile].string)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
-  const profile = addon.profiles[selectedProfile]
-
   return (
     <>
       {/* CARD */}
@@ -351,6 +343,7 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                   <button
                     key={i}
                     onClick={() => {
+                      if (!p.string) return
                       setSelectedProfile(i)
                       navigator.clipboard.writeText(p.string)
                       setCopied(true)
@@ -393,8 +386,8 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                         }} />
                       )
                     })()}
-                    <span style={{ fontSize: '0.82rem', color: selectedProfile === i && copied ? '#00c864' : selectedProfile === i ? CLASS_COLORS[p.class] : 'var(--text)', fontWeight: selectedProfile === i ? 500 : 300, flex: 1 }}>
-                      {selectedProfile === i && copied ? 'Copié !' : p.label}
+                    <span style={{ fontSize: '0.82rem', color: selectedProfile === i && copied ? '#00c864' : !p.string ? 'var(--muted)' : selectedProfile === i ? CLASS_COLORS[p.class] : 'var(--text)', fontWeight: selectedProfile === i ? 500 : 300, flex: 1 }}>
+                      {selectedProfile === i && copied ? 'Copié !' : !p.string ? `${p.label} — bientôt` : p.label}
                     </span>
                     {selectedProfile === i && copied && (
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="#00c864"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
