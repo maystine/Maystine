@@ -41,10 +41,51 @@ const CLASS_ICON_URL = (cls: string) =>
     ? null
     : `https://wow.zamimg.com/images/wow/icons/medium/classicon_${cls}.jpg`
 
-const SPEC_ICON_URL = (cls: string, spec: string) =>
-  cls === 'all' || !spec || spec === 'all'
-    ? null
-    : `https://wow.zamimg.com/images/wow/icons/medium/classicon_${cls}_${spec}.jpg`
+const SPEC_ICON_NAMES: Record<string, string> = {
+  druid_feral:              'ability_druid_catform',
+  druid_balance:            'spell_nature_starfall',
+  druid_guardian:           'ability_racial_bearform',
+  druid_restoration:        'spell_nature_healingtouch',
+  deathknight_unholy:       'spell_deathknight_unholypresence',
+  deathknight_blood:        'ability_deathknight_bloodpresence',
+  deathknight_frost:        'spell_deathknight_frostpresence',
+  warlock_affliction:       'spell_shadow_deathcoil',
+  warlock_demonology:       'spell_shadow_metamorphosis',
+  warlock_destruction:      'spell_shadow_rainoffire',
+  mage_arcane:              'spell_holy_magicalsentry',
+  mage_fire:                'spell_fire_firebolt02',
+  mage_frost:               'spell_frost_frostbolt02',
+  paladin_holy:             'spell_holy_holybolt',
+  paladin_protection:       'ability_paladin_shieldofthetemplar',
+  paladin_retribution:      'spell_holy_auraoflight',
+  priest_discipline:        'spell_holy_powerwordshield',
+  priest_holy:              'spell_holy_guardianspirit',
+  priest_shadow:            'spell_shadow_shadowwordpain',
+  shaman_elemental:         'spell_nature_lightning',
+  shaman_enhancement:       'spell_shaman_improvedstormstrike',
+  shaman_restoration:       'spell_nature_magicimmunity',
+  hunter_beastmastery:      'ability_hunter_beasttaming',
+  hunter_marksmanship:      'ability_marksmanship',
+  hunter_survival:          'ability_hunter_camouflage',
+  rogue_assassination:      'ability_rogue_eviscerate',
+  rogue_outlaw:             'ability_backstab',
+  rogue_subtlety:           'ability_stealth',
+  warrior_arms:             'ability_warrior_savageblow',
+  warrior_fury:             'ability_warrior_innerrage',
+  warrior_protection:       'ability_warrior_defensivestance',
+  monk_brewmaster:          'monk_stance_drunkenox',
+  monk_mistweaver:          'monk_stance_wiseserpent',
+  monk_windwalker:          'monk_stance_whitetiger',
+  demonhunter_havoc:        'ability_demonhunter_specdps',
+  demonhunter_vengeance:    'ability_demonhunter_spectank',
+}
+
+const SPEC_ICON_URL = (cls: string, spec: string) => {
+  if (cls === 'all' || !spec || spec === 'all') return null
+  const key = `${cls}_${spec}`
+  const iconName = SPEC_ICON_NAMES[key] || `classicon_${cls}_${spec}`
+  return `https://wow.zamimg.com/images/wow/icons/medium/${iconName}.jpg`
+}
 
 interface Profile {
   label: string
