@@ -215,14 +215,16 @@ export default function AddonCard({ addon }: { addon: Addon }) {
                     borderRadius: '7px',
                     border: '1px solid var(--border)',
                     backgroundColor: 'transparent',
-                    color: 'var(--text-secondary)',
-                    fontSize: '0.72rem',
-                    transition: 'border-color 0.2s, color 0.2s',
+                    transition: 'border-color 0.2s, opacity 0.2s',
                     display: 'flex', alignItems: 'center',
                   }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border-glow)'; (e.currentTarget as HTMLAnchorElement).style.color = 'var(--accent-light)' }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLAnchorElement).style.color = 'var(--text-secondary)' }}
-                >CF</a>
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = '#F16436'; (e.currentTarget as HTMLAnchorElement).style.opacity = '0.8' }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--border)'; (e.currentTarget as HTMLAnchorElement).style.opacity = '1' }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#F16436" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.67C13.33 7.19 13 4.65 13.95 2c-.95.23-1.78.75-2.49 1.32C8.62 5.45 7.27 8.76 8.38 11.78c.1.27.15.56.15.85 0 .56-.2 1.06-.56 1.43-.36.38-.87.61-1.41.61-.5 0-.97-.19-1.35-.54l-.03-.01c-1.06-1.01-1.61-2.43-1.61-3.88 0-1.2.37-2.39 1.06-3.4C3.14 8.41 2 10.64 2 13c0 2.38.95 4.54 2.49 6.11C6.07 20.73 8.19 22 10.5 22c2.65 0 5.04-1.4 6.5-3.68 1.12-1.7 1.47-3.81.66-5.12z"/>
+                  </svg>
+                </a>
               )}
               {addon.links.wago && (
                 <a href={addon.links.wago} target="_blank" rel="noopener noreferrer"
