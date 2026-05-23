@@ -94,7 +94,7 @@ export default function ParcoursPage() {
             Parcours Esport
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', maxWidth: '520px', lineHeight: 1.7 }}>
-            Compétitions Mythic+ et Race to World First depuis mes débuts en esport World of Warcraft.
+            Compétitions Mythic+ & Race to World First depuis mes débuts.
           </p>
         </div>
 
