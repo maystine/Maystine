@@ -5,7 +5,7 @@
     "description": "Suivi des cooldowns offensifs et défensifs. Un profil dédié par spécialisation.",
     "version": "1.0.0",
     "wowVersion": "11.1.0",
-    "image": "/images/addons/cooldown-manager.png",
+    "image": "/images/addons/cooldownmanager.png",
     "profiles": [
       {
         "label": "Feral",
