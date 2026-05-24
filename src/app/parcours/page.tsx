@@ -137,11 +137,22 @@ export default function ParcoursPage() {
                 justifyContent: 'space-between',
                 gap: '1rem',
               }}>
-                <img
-                  src={exp.image}
-                  alt={exp.name}
-                  style={{ height: '28px', width: 'auto', display: 'block', objectFit: 'contain' }}
-                />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <img
+                    src={exp.image}
+                    alt={exp.name}
+                    style={{ height: '28px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                  />
+                  <h2 style={{
+                    fontFamily: 'var(--font-cinzel), serif',
+                    fontSize: '1rem',
+                    letterSpacing: '0.1em',
+                    color: exp.color,
+                    fontWeight: 600,
+                  }}>
+                    {exp.name}
+                  </h2>
+                </div>
                 <span style={{
                   fontSize: '0.75rem',
                   color: 'var(--muted)',
