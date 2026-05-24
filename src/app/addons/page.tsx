@@ -1,4 +1,15 @@
+import type { Metadata } from 'next'
 import AddonCard from '@/components/addons/AddonCard'
+
+export const metadata: Metadata = {
+  title: 'Addons & Profils WoW',
+  description: 'Configurations prêtes à importer pour vos addons World of Warcraft. Profils par classe et spécialisation, créés par Maystine.',
+  openGraph: {
+    title: 'Addons & Profils WoW | Maystine',
+    description: 'Configurations prêtes à importer pour vos addons World of Warcraft.',
+    url: 'https://maystine.vercel.app/addons',
+  },
+}
 import addons from '../../../data/addons.json'
 
 export default function AddonsPage() {
@@ -71,7 +82,7 @@ export default function AddonsPage() {
             ].map((item) => (
               <div key={item.step} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <span style={{
-                  fontFamily: 'Cinzel, serif',
+                  fontFamily: 'var(--font-cinzel), serif',
                   fontSize: '1.5rem',
                   color: 'var(--border-glow)',
                   lineHeight: 1,

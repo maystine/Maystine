@@ -1,3 +1,16 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Maystine — Joueur Pro WoW | Mandatory & Echo',
+  description: 'Portfolio de Maystine, joueur professionnel World of Warcraft au sein de Mandatory et Echo. Addons, parcours esport et stream.',
+  openGraph: {
+    title: 'Maystine — Joueur Pro WoW',
+    description: 'Joueur professionnel WoW, développeur d\'addons et streamer Twitch.',
+    url: 'https://maystine.vercel.app',
+    type: 'website',
+  },
+}
+
 export default function HomePage() {
   return (
     <div style={{ minHeight: 'calc(100vh - 64px)', position: 'relative', overflow: 'hidden' }}>
@@ -156,7 +169,7 @@ export default function HomePage() {
           ].map((stat) => (
             <div key={stat.label}>
               <div style={{
-                fontFamily: 'Cinzel, serif',
+                fontFamily: 'var(--font-cinzel), serif',
                 fontSize: '1.6rem',
                 color: 'var(--accent-light)',
                 fontWeight: 600,

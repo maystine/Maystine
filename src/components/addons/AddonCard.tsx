@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 
 const CLASS_COLORS: Record<string, string> = {
   mage: '#69CCF0',
@@ -150,15 +151,17 @@ export default function AddonCard({ addon }: { addon: Addon }) {
           overflow: 'hidden',
         }}>
           {addon.image && !imageError ? (
-            <img
+            <Image
               src={addon.image}
               alt={addon.name}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               onError={() => setImageError(true)}
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+              style={{ objectFit: 'cover' }}
             />
           ) : (
             <div style={{
-              fontFamily: 'Cinzel, serif',
+              fontFamily: 'var(--font-cinzel), serif',
               fontSize: '2rem',
               color: 'rgba(124,58,237,0.3)',
               letterSpacing: '0.1em',

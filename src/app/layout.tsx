@@ -1,11 +1,40 @@
 import type { Metadata } from 'next'
+import { Cinzel, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import MiniTwitchPlayer from '@/components/layout/MiniTwitchPlayer'
 
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-cinzel',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'Maystine — WoW Addon Developer & Streamer',
-  description: 'Addons World of Warcraft, parcours et stream par Maystine.',
+  metadataBase: new URL('https://maystine.vercel.app'),
+  title: {
+    default: 'Maystine — WoW Addon Developer & Streamer',
+    template: '%s | Maystine',
+  },
+  description: 'Addons World of Warcraft, parcours esport et stream par Maystine — joueur pro Mandatory & Echo.',
+  openGraph: {
+    siteName: 'Maystine',
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    site: '@Maystine_',
+    creator: '@Maystine_',
+  },
 }
 
 export default function RootLayout({
@@ -14,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${cinzel.variable} ${inter.variable}`}>
       <body>
         <Navbar />
         <main style={{ paddingTop: '64px', position: 'relative', zIndex: 1 }}>

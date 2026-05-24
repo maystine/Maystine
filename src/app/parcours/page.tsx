@@ -1,3 +1,15 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Parcours Esport',
+  description: 'Résultats compétitifs de Maystine — MDI, The Great Push, Race to World First depuis Shadowlands.',
+  openGraph: {
+    title: 'Parcours Esport | Maystine',
+    description: 'MDI, The Great Push, Race to World First — tous les résultats depuis Shadowlands.',
+    url: 'https://maystine.vercel.app/parcours',
+  },
+}
+
 const expansions = [
   {
     name: 'Shadowlands',
@@ -85,7 +97,7 @@ export default function ParcoursPage() {
         {/* Header */}
         <div className="fade-up" style={{ marginBottom: '3.5rem' }}>
           <h1 style={{
-            fontFamily: 'Cinzel, serif',
+            fontFamily: 'var(--font-cinzel), serif',
             fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
             letterSpacing: '0.08em',
             color: 'var(--text-bright)',
@@ -122,7 +134,7 @@ export default function ParcoursPage() {
                 gap: '1rem',
               }}>
                 <h2 style={{
-                  fontFamily: 'Cinzel, serif',
+                  fontFamily: 'var(--font-cinzel), serif',
                   fontSize: '1rem',
                   letterSpacing: '0.1em',
                   color: exp.color,

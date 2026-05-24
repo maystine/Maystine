@@ -54,7 +54,7 @@ export default function Navbar() {
             />
           </div>
           <span style={{
-            fontFamily: 'Cinzel, serif',
+            fontFamily: 'var(--font-cinzel), serif',
             fontSize: '1rem',
             letterSpacing: '0.1em',
             color: 'var(--text-bright)',
