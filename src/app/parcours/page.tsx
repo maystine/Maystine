@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 const expansions = [
   {
     name: 'Midnight',
+    image: '/images/addons/midnight.png',
     years: '2026 – …',
     color: '#a855f7',
     results: [
@@ -21,6 +22,7 @@ const expansions = [
   },
   {
     name: 'The War Within',
+    image: '/images/addons/thewarwithin.png',
     years: '2024 – 2025',
     color: '#b45309',
     results: [
@@ -35,6 +37,7 @@ const expansions = [
   },
   {
     name: 'Dragonflight',
+    image: '/images/addons/dragonflight.png',
     years: '2023 – 2024',
     color: '#f59e0b',
     results: [
@@ -48,6 +51,7 @@ const expansions = [
   },
   {
     name: 'Shadowlands',
+    image: '/images/addons/shadowland.png',
     years: '2020 – 2022',
     color: '#6b7fd7',
     results: [
@@ -133,15 +137,11 @@ export default function ParcoursPage() {
                 justifyContent: 'space-between',
                 gap: '1rem',
               }}>
-                <h2 style={{
-                  fontFamily: 'var(--font-cinzel), serif',
-                  fontSize: '1rem',
-                  letterSpacing: '0.1em',
-                  color: exp.color,
-                  fontWeight: 600,
-                }}>
-                  {exp.name}
-                </h2>
+                <img
+                  src={exp.image}
+                  alt={exp.name}
+                  style={{ height: '28px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                />
                 <span style={{
                   fontSize: '0.75rem',
                   color: 'var(--muted)',
