@@ -12,30 +12,11 @@ export const metadata: Metadata = {
 
 const expansions = [
   {
-    name: 'Shadowlands',
-    years: '2020 – 2022',
-    color: '#6b7fd7',
+    name: 'Midnight',
+    years: '2026 – …',
+    color: '#a855f7',
     results: [
-      { place: 8,  label: 'MDI Global Final — Season 1' },
-      { place: 1,  label: 'The Great Push — Season 1' },
-      { place: 6,  label: 'The Great Push — Season 2' },
-      { place: 1,  label: 'MDI Group B — Season 3' },
-      { place: 2,  label: 'MDI Global Final — Season 3' },
-      { place: 2,  label: 'TGP EU Qualifier — Season 4' },
-      { place: 2,  label: 'TGP Global Final — Season 4' },
-    ],
-  },
-  {
-    name: 'Dragonflight',
-    years: '2023 – 2024',
-    color: '#f59e0b',
-    results: [
-      { place: 2,  label: 'MDI Global Final — Season 1' },
       { place: 2,  label: 'Race to World First' },
-      { place: 6,  label: 'TGP Global Final — Season 2' },
-      { place: 1,  label: 'Race to World First' },
-      { place: 1,  label: 'MDI Global Final — Season 3' },
-      { place: 2,  label: 'TGP Global Final — Season 4' },
     ],
   },
   {
@@ -53,11 +34,30 @@ const expansions = [
     ],
   },
   {
-    name: 'Midnight',
-    years: '2026 – …',
-    color: '#a855f7',
+    name: 'Dragonflight',
+    years: '2023 – 2024',
+    color: '#f59e0b',
     results: [
+      { place: 2,  label: 'MDI Global Final — Season 1' },
       { place: 2,  label: 'Race to World First' },
+      { place: 6,  label: 'TGP Global Final — Season 2' },
+      { place: 1,  label: 'Race to World First' },
+      { place: 1,  label: 'MDI Global Final — Season 3' },
+      { place: 2,  label: 'TGP Global Final — Season 4' },
+    ],
+  },
+  {
+    name: 'Shadowlands',
+    years: '2020 – 2022',
+    color: '#6b7fd7',
+    results: [
+      { place: 8,  label: 'MDI Global Final — Season 1' },
+      { place: 1,  label: 'The Great Push — Season 1' },
+      { place: 6,  label: 'The Great Push — Season 2' },
+      { place: 1,  label: 'MDI Group B — Season 3' },
+      { place: 2,  label: 'MDI Global Final — Season 3' },
+      { place: 2,  label: 'TGP EU Qualifier — Season 4' },
+      { place: 2,  label: 'TGP Global Final — Season 4' },
     ],
   },
 ]
