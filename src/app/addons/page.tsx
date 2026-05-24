@@ -48,7 +48,7 @@ export default function AddonsPage() {
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '0.75rem' }}>Addons & Profils</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '500px', lineHeight: 1.7 }}>
-            Mes configurations prêtes à importer. Sélectionne ton addon, choisis ta classe et copie le string directement dans le jeu.
+            Sélectionne ton addon, choisis ta classe et copie le string directement dans le jeu.
           </p>
         </div>
 
