@@ -141,7 +141,7 @@ export default function ParcoursPage() {
                   <img
                     src={exp.image}
                     alt={exp.name}
-                    style={{ height: '28px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                    style={{ height: '34px', width: 'auto', display: 'block', objectFit: 'contain' }}
                   />
                   <h2 style={{
                     fontFamily: 'var(--font-cinzel), serif',
