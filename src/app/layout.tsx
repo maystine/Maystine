@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     type: 'website',
   },
+  verification: {
+    google: 'OopVWrnGTa2dXuSJGIOaJ6fbqGxTImRHoBHwfwvZ_y4',
+  },
   twitter: {
     card: 'summary',
     site: '@Maystine_',
