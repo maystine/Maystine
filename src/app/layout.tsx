@@ -28,7 +28,7 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL('https://maystine.vercel.app'),
   title: {
-    default: 'Maystine — WoW Addon Developer & Streamer',
+    default: 'Maystine',
     template: '%s | Maystine',
   },
   description: 'Addons World of Warcraft, parcours esport et stream par Maystine — joueur pro Mandatory & Echo.',
