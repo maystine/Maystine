@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Cinzel, Inter } from 'next/font/google'
+import { Cinzel, Inter, Caveat } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import MiniTwitchPlayer from '@/components/layout/MiniTwitchPlayer'
@@ -15,6 +15,13 @@ const inter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-caveat',
   display: 'swap',
 })
 
@@ -43,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={`${cinzel.variable} ${inter.variable}`}>
+    <html lang="fr" className={`${cinzel.variable} ${inter.variable} ${caveat.variable}`}>
       <body>
         <Navbar />
         <main style={{ paddingTop: '64px', position: 'relative', zIndex: 1 }}>

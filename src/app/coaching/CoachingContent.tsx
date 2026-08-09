@@ -9,74 +9,19 @@ const services = [
         <path d="M2 12l10 5 10-5"/>
       </svg>
     ),
-    title: 'Coaching Mythic+',
-    tag: 'Live 1-on-1',
-    description: 'Analyse de ton gameplay en temps réel. Routes, comp, keybinds, positionnement — on casse les mauvaises habitudes et on optimise ta performance.',
+    title: 'Coaching Standard',
+    tag: 'Raid & Mythic+ · Live 1-on-1',
+    description: 'Analyse de ton gameplay en temps réel, que ce soit en Mythic+ ou en Raid. Routes, comp, keybinds, positionnement, cooldowns, parsing — on casse les mauvaises habitudes et on optimise ta performance.',
     price: '50€',
     unit: '/ heure',
     color: '#a855f7',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <polygon points="10 8 16 12 10 16 10 8"/>
-      </svg>
-    ),
-    title: 'Coaching Raid',
-    tag: 'Live 1-on-1',
-    description: 'Optimisation de ton rôle en progression ou en farm. Placement, cooldowns, parsing — que tu vises le Cutting Edge ou le top parse.',
-    price: '50€',
-    unit: '/ heure',
-    color: '#a855f7',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-    ),
-    title: 'Coaching Débutant',
-    tag: 'Toutes classes',
-    description: 'Tu débutes ou tu reprends WoW ? On pose les bases : mécaniques, stats, spec, interface. Un accompagnement adapté à ton rythme.',
-    price: '40€',
-    unit: '/ heure',
-    color: '#7c3aed',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2"/>
-        <path d="M8 21h8M12 17v4"/>
-      </svg>
-    ),
-    title: 'VOD / Logs Review',
-    tag: 'Analyse écrite ou vocal',
-    description: 'Tu m\'envoies ta VOD ou tes logs Warcraft Logs, je les analyse et te donne un retour détaillé sur ce qui te coûte de la performance.',
-    price: '35€',
-    unit: '/ session',
-    color: '#7c3aed',
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="2" width="20" height="20" rx="2"/>
-        <path d="M7 12h10M12 7v10"/>
-      </svg>
-    ),
-    title: 'Setup UI / Addons',
-    tag: 'Config personnalisée',
-    description: 'Installation et configuration de mes addons (WeakAuras, ElvUI, etc.) adaptés à ta classe et ton style de jeu. Interface optimale garantie.',
-    price: '35€',
-    unit: '/ session',
-    color: '#7c3aed',
   },
 ]
 
 const steps = [
   { num: '01', title: 'Contact Discord', text: 'Rejoins mon Discord et envoie-moi un DM. Dis-moi ce que tu veux travailler et ton niveau actuel.' },
-  { num: '02', title: 'On cale un créneau', text: 'On convient ensemble d\'une date et d\'un horaire. Paiement à l\'avance via PayPal ou Stripe.' },
-  { num: '03', title: 'Session en live', text: 'On se retrouve sur Discord. Je partage mon écran ou tu partages le tien selon le format choisi.' },
+  { num: '02', title: 'On cale un créneau', text: 'On convient ensemble d\'une date et d\'un horaire. Paiement à l\'avance via PayPal ou virement bancaire.' },
+  { num: '03', title: 'Session en live', text: 'On se retrouve sur Discord. La session est enregistrée et partagée via ReviewTool ou YouTube (VOD obligatoire). WarcraftLogs requis pour le Raid.' },
 ]
 
 export default function CoachingContent() {
@@ -176,35 +121,8 @@ export default function CoachingContent() {
           ))}
         </div>
 
-        {/* Offre combinée */}
-        <div className="fade-up fade-up-delay-2" style={{
-          marginBottom: '3rem', padding: '1.75rem 2rem', borderRadius: '12px',
-          border: '1px solid var(--border-glow)', backgroundColor: 'rgba(124, 58, 237, 0.06)',
-          display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap',
-        }}>
-          <div style={{
-            width: '44px', height: '44px', borderRadius: '8px',
-            backgroundColor: 'rgba(168,85,247,0.15)', border: '1px solid rgba(168,85,247,0.3)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-          }}>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a855f7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
-          </div>
-          <div style={{ flex: 1, minWidth: '220px' }}>
-            <div style={{ fontSize: '0.95rem', fontWeight: 500, color: 'var(--text-bright)', marginBottom: '4px' }}>
-              Offre combinée — <span style={{ color: '#a855f7' }}>−15%</span>
-            </div>
-            <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-              Tu combines 2 services différents ? Je t&apos;offre 15% de réduction sur le total.
-              Exemple : Coaching Mythic+ (50€) + VOD Review (35€) = <s style={{ opacity: 0.5 }}>85€</s>{' '}
-              <strong style={{ color: 'var(--text-bright)' }}>72€</strong>.
-            </p>
-          </div>
-        </div>
-
         {/* Comment ça se passe */}
-        <div className="fade-up fade-up-delay-3" style={{ marginBottom: '3.5rem' }}>
+        <div className="fade-up fade-up-delay-2" style={{ marginBottom: '3.5rem' }}>
           <h2 style={{
             fontFamily: 'var(--font-cinzel), serif',
             fontSize: '1.1rem', letterSpacing: '0.08em',
@@ -229,7 +147,7 @@ export default function CoachingContent() {
         </div>
 
         {/* CTA */}
-        <div className="fade-up fade-up-delay-4" style={{ textAlign: 'center' }}>
+        <div className="fade-up fade-up-delay-3" style={{ textAlign: 'center' }}>
           <a
             href="https://discord.gg/AnJ7x4jpGG"
             target="_blank"

@@ -54,9 +54,9 @@ export default function Navbar() {
             />
           </div>
           <span style={{
-            fontFamily: 'var(--font-cinzel), serif',
-            fontSize: '1rem',
-            letterSpacing: '0.1em',
+            fontFamily: 'var(--font-caveat), cursive',
+            fontSize: '1.3rem',
+            letterSpacing: '0.05em',
             color: 'var(--text-bright)',
             fontWeight: 600,
           }}>Maystine</span>
