@@ -225,9 +225,69 @@
     "image": "/images/addons/ellesmereUI-logo.png",
     "profiles": [
       {
-        "label": "Profil Global",
-        "class": "all",
-        "spec": "all",
+        "label": "Feral",
+        "class": "druid",
+        "spec": "feral",
+        "string": ""
+      },
+      {
+        "label": "Moonkin",
+        "class": "druid",
+        "spec": "balance",
+        "string": ""
+      },
+      {
+        "label": "Guardian",
+        "class": "druid",
+        "spec": "guardian",
+        "string": ""
+      },
+      {
+        "label": "Heal",
+        "class": "druid",
+        "spec": "restoration",
+        "string": ""
+      },
+      {
+        "label": "Devastation",
+        "class": "evoker",
+        "spec": "devastation",
+        "string": ""
+      },
+      {
+        "label": "Augmentation",
+        "class": "evoker",
+        "spec": "augmentation",
+        "string": ""
+      },
+      {
+        "label": "Preservation",
+        "class": "evoker",
+        "spec": "preservation",
+        "string": ""
+      },
+      {
+        "label": "Unholy",
+        "class": "deathknight",
+        "spec": "unholy",
+        "string": ""
+      },
+      {
+        "label": "Affliction",
+        "class": "warlock",
+        "spec": "affliction",
+        "string": ""
+      },
+      {
+        "label": "Demonology",
+        "class": "warlock",
+        "spec": "demonology",
+        "string": ""
+      },
+      {
+        "label": "Destruction",
+        "class": "warlock",
+        "spec": "destruction",
         "string": ""
       }
     ],
