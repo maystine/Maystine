@@ -222,7 +222,7 @@
     "description": "Interface personnalisée complète. Frames, barres et éléments UI optimisés pour le haut niveau en Raid et Mythic+.",
     "version": "1.0.0",
     "wowVersion": "11.1.0",
-    "image": "/images/addons/ellesmereui.png",
+    "image": "/images/addons/ellesmereUI-logo.png",
     "profiles": [
       {
         "label": "Profil Global",

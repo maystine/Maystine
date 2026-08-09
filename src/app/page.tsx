@@ -57,8 +57,9 @@ export default function HomePage() {
           style={{
             fontFamily: 'var(--font-caveat), cursive',
             fontSize: 'clamp(4rem, 8vw, 7rem)',
-            lineHeight: 1.05,
+            lineHeight: 1.1,
             marginBottom: '1rem',
+            paddingBottom: '0.1em',
             background: 'linear-gradient(135deg, #f0ecff 0%, #a855f7 60%, #7c3aed 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
@@ -73,9 +74,9 @@ export default function HomePage() {
           className="fade-up fade-up-delay-2"
           style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '2rem', justifyContent: 'center' }}
         >
-          <img src="/images/mandatory-logo.png" alt="Mandatory" style={{ height: '24px', objectFit: 'contain', opacity: 0.8 }} />
+          <img src="/images/addons/mandatory-logo.png" alt="Mandatory" style={{ height: '24px', objectFit: 'contain', opacity: 0.8 }} />
           <span style={{ width: '1px', height: '16px', backgroundColor: 'var(--border-glow)' }} />
-          <img src="/images/echo-logo.png" alt="Echo" style={{ height: '24px', objectFit: 'contain', opacity: 0.8 }} />
+          <img src="/images/addons/echo-logo.png" alt="Echo" style={{ height: '24px', objectFit: 'contain', opacity: 0.8 }} />
         </div>
 
         {/* Description */}
