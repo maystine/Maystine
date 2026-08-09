@@ -60,7 +60,7 @@ export default function HomePage() {
             lineHeight: 1.1,
             letterSpacing: '0.1em',
             marginBottom: '1rem',
-            background: 'linear-gradient(135deg, #f0ecff 0%, #a855f7 60%, #7c3aed 100%)',
+            background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 60%, #a855f7 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
