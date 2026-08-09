@@ -74,9 +74,15 @@ export default function HomePage() {
           className="fade-up fade-up-delay-2"
           style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '2rem', justifyContent: 'center' }}
         >
-          <img src="/images/addons/mandatory-logo.png" alt="Mandatory" style={{ height: '24px', objectFit: 'contain', opacity: 0.8 }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <img src="/images/addons/mandatory-logo.png" alt="Mandatory" style={{ height: '24px', objectFit: 'contain', opacity: 0.8 }} />
+            <span style={{ fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Mandatory</span>
+          </div>
           <span style={{ width: '1px', height: '16px', backgroundColor: 'var(--border-glow)' }} />
-          <img src="/images/addons/echo-logo.png" alt="Echo" style={{ height: '24px', objectFit: 'contain', opacity: 0.8 }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <img src="/images/addons/echo-logo.png" alt="Echo" style={{ height: '24px', objectFit: 'contain', opacity: 0.8 }} />
+            <span style={{ fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Echo</span>
+          </div>
         </div>
 
         {/* Description */}
