@@ -10,8 +10,8 @@ const services = [
       </svg>
     ),
     title: 'Coaching Standard',
-    tag: 'Raid & Mythic+ · Live 1-on-1',
-    description: 'Analyse de ton gameplay en temps réel, que ce soit en Mythic+ ou en Raid. Routes, comp, keybinds, positionnement, cooldowns, parsing — on casse les mauvaises habitudes et on optimise ta performance.',
+    tag: 'Raid & Mythic+',
+    description: 'Analyse de ton gameplay, que ce soit en Mythic+ ou en Raid. Débutant comme confirmé, je m\'adapte à ton niveau et à tes besoins pour t\'aider à progresser.',
     price: '50€',
     unit: '/ heure',
     color: '#a855f7',
@@ -21,7 +21,7 @@ const services = [
 const steps = [
   { num: '01', title: 'Contact Discord', text: 'Rejoins mon Discord et envoie-moi un DM. Dis-moi ce que tu veux travailler et ton niveau actuel.' },
   { num: '02', title: 'On cale un créneau', text: 'On convient ensemble d\'une date et d\'un horaire. Paiement à l\'avance via PayPal ou virement bancaire.' },
-  { num: '03', title: 'Session en live', text: 'On se retrouve sur Discord. La session est enregistrée et partagée via ReviewTool ou YouTube (VOD obligatoire). WarcraftLogs requis pour le Raid.' },
+  { num: '03', title: 'Session en live', text: 'On se retrouve sur Discord. On utilise ReviewTool ou YouTube (VOD obligatoire) et WarcraftLogs qui permet de mieux voir les choses à améliorer.' },
 ]
 
 export default function CoachingContent() {
@@ -71,7 +71,7 @@ export default function CoachingContent() {
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.8 }}>
             Des années de compétition MDI, Race to World First et Cutting Edge au sein de structures comme
-            Mandatory et Echo. Je t&apos;aide à progresser avec la même exigence que le haut niveau — à ton rythme.
+            Mandatory et Echo. Je t&apos;aide à progresser avec la même exigence que le haut niveau à ton rythme.
           </p>
         </div>
 
