@@ -193,9 +193,8 @@ export default function ParcoursPage() {
                 padding: '1.1rem 1.5rem',
                 borderBottom: '1px solid var(--border)',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: '1rem',
+                flexDirection: 'column',
+                gap: '0.35rem',
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <img
@@ -217,7 +216,7 @@ export default function ParcoursPage() {
                   fontSize: '0.8rem',
                   color: '#bdbadb',
                   letterSpacing: '0.06em',
-                  flexShrink: 0,
+                  marginLeft: '70px',
                 }}>
                   {exp.years}
                 </span>
