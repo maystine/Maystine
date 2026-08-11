@@ -272,7 +272,6 @@ export default function ParcoursPage() {
                               width: '100px',
                               borderRadius: '50%',
                               objectFit: 'cover',
-                              border: `2px solid ${exp.color}`,
                               zIndex: 1,
                             }}
                           />

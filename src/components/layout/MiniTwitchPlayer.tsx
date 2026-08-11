@@ -16,7 +16,7 @@ export default function MiniTwitchPlayer() {
       borderRadius: '10px',
       overflow: 'hidden',
       border: '1px solid var(--border-glow)',
-      boxShadow: '0 0 32px rgba(124, 58, 237, 0.2)',
+      boxShadow: '0 0 16px rgba(124, 58, 237, 0.1)',
       transition: 'all 0.3s ease',
       width: minimized ? '160px' : '280px',
     }}>
