@@ -76,7 +76,7 @@ export default function Navbar() {
                   fontSize: '0.8rem',
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: isActive ? 'var(--accent-light)' : 'var(--text-secondary)',
+                  color: isActive ? 'var(--accent-light)' : 'var(--text)',
                   fontWeight: isActive ? 500 : 300,
                   transition: 'color 0.2s ease, border-bottom-color 0.2s ease',
                   position: 'relative',
