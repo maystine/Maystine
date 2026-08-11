@@ -62,37 +62,6 @@ export default function AddonsPage() {
             <AddonCard key={addon.id} addon={addon} />
           ))}
         </div>
-
-        {/* How to use */}
-        <div style={{
-          marginTop: '4rem',
-          padding: '2rem',
-          borderRadius: '12px',
-          border: '1px solid var(--border)',
-          backgroundColor: 'var(--bg-card)',
-        }}>
-          <h2 style={{ fontSize: '1rem', marginBottom: '1.25rem', letterSpacing: '0.05em', color: 'var(--text-secondary)' }}>
-            Comment importer un profil ?
-          </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
-            {[
-              { step: '01', text: 'Clique sur "Copier le profil"' },
-              { step: '02', text: 'Choisis ta spécialisation' },
-              { step: '03', text: 'Le string est copié puis ouvre l\'addon in-game et colle-le (Ctrl+V)' },
-            ].map((item) => (
-              <div key={item.step} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <span style={{
-                  fontFamily: 'var(--font-cinzel), serif',
-                  fontSize: '1.5rem',
-                  color: 'var(--border-glow)',
-                  lineHeight: 1,
-                  flexShrink: 0,
-                }}>{item.step}</span>
-                <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   )
