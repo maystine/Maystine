@@ -42,7 +42,7 @@ const expansions = [
         season: 'Saison 2',
         results: [
           { place: 2,  label: 'MDI Global Final' },
-          { place: 2,  label: 'Race to World First - Liberation Of Undermine', boss: '/images/addons/Gallywix.png' },
+          { place: 2,  label: 'Race to World First - Liberation Of Undermine', boss: '/images/addons/Gallywix.png', bossSize: 130 },
         ],
       },
       {
@@ -268,8 +268,8 @@ export default function ParcoursPage() {
                               right: '1.5rem',
                               top: '50%',
                               transform: 'translateY(-50%)',
-                              height: '100px',
-                              width: '100px',
+                              height: `${'bossSize' in r && r.bossSize ? r.bossSize : 100}px`,
+                              width: `${'bossSize' in r && r.bossSize ? r.bossSize : 100}px`,
                               borderRadius: '50%',
                               objectFit: 'cover',
                               zIndex: 1,
