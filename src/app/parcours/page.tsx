@@ -43,9 +43,9 @@ const expansions = [
     results: [
       { place: 2,  label: 'TGP Global Final — Season 4' },
       { place: 1,  label: 'MDI Global Final — Season 3' },
-      { place: 1,  label: 'Race to World First' },
+      { place: 1,  label: 'Race to World First - Amirdrassil, the Dream\'s Hope' },
       { place: 6,  label: 'TGP Global Final — Season 2' },
-      { place: 2,  label: 'Race to World First' },
+      { place: 2,  label: 'Race to World First - Aberrus, the Shadowed Crucible' },
       { place: 2,  label: 'MDI Global Final — Season 1' },
     ],
   },
