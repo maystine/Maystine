@@ -38,25 +38,24 @@ export default function Navbar() {
         {/* Logo - gauche */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <div style={{
-            width: '32px',
-            height: '32px',
+            width: '44px',
+            height: '44px',
             borderRadius: '6px',
             overflow: 'hidden',
-            boxShadow: '0 0 16px rgba(124, 58, 237, 0.5)',
             border: '1px solid var(--border-glow)',
             flexShrink: 0,
           }}>
             <img
               src="https://unavatar.io/twitch/Maystine"
               alt="Maystine"
-              width={32}
-              height={32}
+              width={44}
+              height={44}
               style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           </div>
           <span style={{
             fontFamily: 'var(--font-caveat), cursive',
-            fontSize: '1.3rem',
+            fontSize: '1.56rem',
             letterSpacing: '0.05em',
             color: 'var(--text-bright)',
             fontWeight: 600,
