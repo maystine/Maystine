@@ -205,7 +205,7 @@ export default function ParcoursPage() {
                   />
                   <h2 style={{
                     fontFamily: 'var(--font-cinzel), serif',
-                    fontSize: '1rem',
+                    fontSize: '1.3rem',
                     letterSpacing: '0.1em',
                     color: exp.color,
                     fontWeight: 600,
