@@ -215,7 +215,7 @@ export default function ParcoursPage() {
                 </div>
                 <span style={{
                   fontSize: '0.8rem',
-                  color: 'var(--muted)',
+                  color: '#bdbadb',
                   letterSpacing: '0.06em',
                   flexShrink: 0,
                 }}>
