@@ -229,6 +229,7 @@ export default function ParcoursPage() {
                   <div
                     key={s.season}
                     style={{
+                      position: 'relative',
                       padding: '0.5rem 0',
                       borderBottom: si < exp.seasons.length - 1 ? '1px solid rgba(30,27,51,0.6)' : 'none',
                     }}
@@ -248,7 +249,6 @@ export default function ParcoursPage() {
                       <div
                         key={j}
                         style={{
-                          position: 'relative',
                           display: 'flex',
                           alignItems: 'center',
                           gap: '1rem',
