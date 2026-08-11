@@ -76,9 +76,8 @@ export default function CoachingContent() {
         </div>
 
         {/* Services grid */}
-        <div className="fade-up fade-up-delay-1" style={{
+        <div className="fade-up fade-up-delay-1 responsive-grid-300" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
           gap: '1.25rem', marginBottom: '2.5rem',
         }}>
           {services.map((s) => (

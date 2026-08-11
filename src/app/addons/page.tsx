@@ -53,9 +53,8 @@ export default function AddonsPage() {
         </div>
 
         {/* Grid */}
-        <div style={{
+        <div className="responsive-grid-300" style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
           gap: '1.5rem',
         }}>
           {addons.map((addon) => (

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 const links = [
   { href: '/', label: 'Accueil' },
@@ -12,6 +13,7 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname()
+  const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <nav style={{
@@ -36,7 +38,7 @@ export default function Navbar() {
         justifyContent: 'space-between',
       }}>
         {/* Logo - gauche */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px' }} onClick={() => setMenuOpen(false)}>
           <div style={{
             width: '44px',
             height: '44px',
@@ -62,8 +64,27 @@ export default function Navbar() {
           }}>Maystine</span>
         </Link>
 
+        {/* Burger - mobile uniquement */}
+        <button
+          className="navbar-toggle"
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label="Menu"
+          aria-expanded={menuOpen}
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            color: 'var(--text-bright)',
+            fontSize: '1.5rem',
+            lineHeight: 1,
+            padding: '4px 8px',
+          }}
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
+
         {/* Nav links + boutons réseaux - droite */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+        <div className={`navbar-links${menuOpen ? ' navbar-links-open' : ''}`}>
           {links.map((link) => {
             const isActive = pathname === link.href
             return (
@@ -71,6 +92,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className="nav-link"
+                onClick={() => setMenuOpen(false)}
                 style={{
                   fontSize: '0.8rem',
                   letterSpacing: '0.12em',
@@ -89,10 +111,10 @@ export default function Navbar() {
           })}
 
           {/* Séparateur */}
-          <div style={{ width: '1px', height: '20px', backgroundColor: 'var(--border-glow)', flexShrink: 0 }} />
+          <div className="navbar-separator" style={{ width: '1px', height: '20px', backgroundColor: 'var(--border-glow)', flexShrink: 0 }} />
 
           {/* Boutons réseaux */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div className="navbar-socials" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
 
           {/* YouTube */}
           <a

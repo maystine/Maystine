@@ -18,7 +18,7 @@ export default function MiniTwitchPlayer() {
       border: '1px solid var(--border-glow)',
       boxShadow: '0 0 16px rgba(124, 58, 237, 0.1)',
       transition: 'all 0.3s ease',
-      width: minimized ? '160px' : '280px',
+      width: minimized ? '160px' : 'min(280px, calc(100vw - 3rem))',
     }}>
       {/* Header bar */}
       <div style={{
@@ -55,8 +55,8 @@ export default function MiniTwitchPlayer() {
         <iframe
           src="https://player.twitch.tv/?channel=Maystine&parent=maystine.vercel.app&muted=true"
           height="158"
-          width="280"
-          style={{ display: 'block', backgroundColor: '#000' }}
+          width="100%"
+          style={{ display: 'block', width: '100%', backgroundColor: '#000' }}
           allowFullScreen
         />
       )}
