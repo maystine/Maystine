@@ -20,7 +20,7 @@ const expansions = [
       {
         season: 'Saison 1',
         results: [
-          { place: 2,  label: 'Race to World First - March on Quel\'Danas' },
+          { place: 2,  label: 'Race to World First - March on Quel\'Danas', boss: "/images/addons/L'ura.png" },
         ],
       },
     ],
@@ -35,14 +35,14 @@ const expansions = [
         season: 'Saison 3',
         results: [
           { place: 4,  label: 'MDI Global Final' },
-          { place: 2,  label: 'Race to World First - Manaforge Omega' },
+          { place: 2,  label: 'Race to World First - Manaforge Omega', boss: '/images/addons/Dimensius.png' },
         ],
       },
       {
         season: 'Saison 2',
         results: [
           { place: 2,  label: 'MDI Global Final' },
-          { place: 2,  label: 'Race to World First - Liberation Of Undermine' },
+          { place: 2,  label: 'Race to World First - Liberation Of Undermine', boss: '/images/addons/Gallywix.png' },
         ],
       },
       {
@@ -50,7 +50,7 @@ const expansions = [
         results: [
           { place: 1,  label: 'TGP Global Final' },
           { place: 1,  label: 'MDI Global Final' },
-          { place: 2,  label: 'Race to World First - Nerub-ar Palace' },
+          { place: 2,  label: 'Race to World First - Nerub-ar Palace', boss: '/images/addons/Queen Ansurek.png' },
         ],
       },
     ],
@@ -71,14 +71,14 @@ const expansions = [
         season: 'Saison 3',
         results: [
           { place: 1,  label: 'MDI Global Final' },
-          { place: 1,  label: 'Race to World First - Amirdrassil, the Dream\'s Hope' },
+          { place: 1,  label: 'Race to World First - Amirdrassil, the Dream\'s Hope', boss: '/images/addons/Fyrakk.png' },
         ],
       },
       {
         season: 'Saison 2',
         results: [
           { place: 6,  label: 'TGP Global Final' },
-          { place: 2,  label: 'Race to World First - Aberrus, the Shadowed Crucible' },
+          { place: 2,  label: 'Race to World First - Aberrus, the Shadowed Crucible', boss: '/images/addons/Sarkareth.png' },
         ],
       },
       {
@@ -258,6 +258,21 @@ export default function ParcoursPage() {
                         <span style={{ fontSize: '0.875rem', color: 'var(--text)', letterSpacing: '0.02em' }}>
                           {r.label}
                         </span>
+                        {'boss' in r && r.boss && (
+                          <img
+                            src={r.boss}
+                            alt=""
+                            style={{
+                              marginLeft: 'auto',
+                              height: '28px',
+                              width: '28px',
+                              borderRadius: '50%',
+                              objectFit: 'cover',
+                              border: `1px solid ${exp.color}`,
+                              flexShrink: 0,
+                            }}
+                          />
+                        )}
                       </div>
                     ))}
                   </div>
