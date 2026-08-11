@@ -76,9 +76,9 @@ export default function AddonsPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
             {[
-              { step: '01', text: 'Clique sur "Copier le profil" sur la card de l\'addon' },
-              { step: '02', text: 'Choisis ta classe et ta spécialisation dans la modal' },
-              { step: '03', text: 'Le string est copié — ouvre l\'addon in-game et colle-le (Ctrl+V)' },
+              { step: '01', text: 'Clique sur "Copier le profil"' },
+              { step: '02', text: 'Choisis ta spécialisation' },
+              { step: '03', text: 'Le string est copié puis ouvre l\'addon in-game et colle-le (Ctrl+V)' },
             ].map((item) => (
               <div key={item.step} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <span style={{
