@@ -181,3 +181,22 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* Parcours expansion header */
+.exp-logo {
+  height: 60px;
+}
+
+.exp-title {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 640px) {
+  .exp-logo {
+    height: 51px;
+  }
+
+  .exp-title {
+    font-size: 1.17rem;
+  }
+}

@@ -200,11 +200,11 @@ export default function ParcoursPage() {
                   <img
                     src={exp.image}
                     alt={exp.name}
-                    style={{ height: '60px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                    className="exp-logo"
+                    style={{ width: 'auto', display: 'block', objectFit: 'contain' }}
                   />
-                  <h2 style={{
+                  <h2 className="exp-title" style={{
                     fontFamily: 'var(--font-cinzel), serif',
-                    fontSize: '1.3rem',
                     letterSpacing: '0.1em',
                     color: exp.color,
                     fontWeight: 600,
