@@ -17,7 +17,7 @@ const expansions = [
     years: '2026 – …',
     color: '#a855f7',
     results: [
-      { place: 2,  label: 'Race to World First' },
+      { place: 2,  label: 'Race to World First - March on Quel\'Danas ' },
     ],
   },
   {
@@ -27,12 +27,12 @@ const expansions = [
     color: '#b45309',
     results: [
       { place: 4,  label: 'MDI Global Final — Season 3' },
-      { place: 2,  label: 'Race to World First' },
+      { place: 2,  label: 'Race to World First - Manaforge Omega' },
       { place: 2,  label: 'MDI Global Final — Season 2' },
-      { place: 2,  label: 'Race to World First' },
+      { place: 2,  label: 'Race to World First - Liberation Of Undermine' },
       { place: 1,  label: 'TGP Global Final — Season 1' },
       { place: 1,  label: 'MDI Global Final — Season 1' },
-      { place: 2,  label: 'Race to World First' },
+      { place: 2,  label: 'Race to World First - Nerub-ar Palace' },
     ],
   },
   {
