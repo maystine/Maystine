@@ -16,8 +16,13 @@ const expansions = [
     image: '/images/addons/midnight.png',
     years: '2026 – …',
     color: '#a855f7',
-    results: [
-      { place: 2,  label: 'Race to World First - March on Quel\'Danas ' },
+    seasons: [
+      {
+        season: 'Saison 1',
+        results: [
+          { place: 2,  label: 'Race to World First - March on Quel\'Danas' },
+        ],
+      },
     ],
   },
   {
@@ -25,14 +30,29 @@ const expansions = [
     image: '/images/addons/thewarwithin.png',
     years: '2024 – 2025',
     color: '#b45309',
-    results: [
-      { place: 4,  label: 'MDI Global Final — Season 3' },
-      { place: 2,  label: 'Race to World First - Manaforge Omega' },
-      { place: 2,  label: 'MDI Global Final — Season 2' },
-      { place: 2,  label: 'Race to World First - Liberation Of Undermine' },
-      { place: 1,  label: 'TGP Global Final — Season 1' },
-      { place: 1,  label: 'MDI Global Final — Season 1' },
-      { place: 2,  label: 'Race to World First - Nerub-ar Palace' },
+    seasons: [
+      {
+        season: 'Saison 3',
+        results: [
+          { place: 4,  label: 'MDI Global Final' },
+          { place: 2,  label: 'Race to World First - Manaforge Omega' },
+        ],
+      },
+      {
+        season: 'Saison 2',
+        results: [
+          { place: 2,  label: 'MDI Global Final' },
+          { place: 2,  label: 'Race to World First - Liberation Of Undermine' },
+        ],
+      },
+      {
+        season: 'Saison 1',
+        results: [
+          { place: 1,  label: 'TGP Global Final' },
+          { place: 1,  label: 'MDI Global Final' },
+          { place: 2,  label: 'Race to World First - Nerub-ar Palace' },
+        ],
+      },
     ],
   },
   {
@@ -40,13 +60,33 @@ const expansions = [
     image: '/images/addons/dragonflight.png',
     years: '2023 – 2024',
     color: '#f59e0b',
-    results: [
-      { place: 2,  label: 'TGP Global Final — Season 4' },
-      { place: 1,  label: 'MDI Global Final — Season 3' },
-      { place: 1,  label: 'Race to World First - Amirdrassil, the Dream\'s Hope' },
-      { place: 6,  label: 'TGP Global Final — Season 2' },
-      { place: 2,  label: 'Race to World First - Aberrus, the Shadowed Crucible' },
-      { place: 2,  label: 'MDI Global Final — Season 1' },
+    seasons: [
+      {
+        season: 'Saison 4',
+        results: [
+          { place: 2,  label: 'TGP Global Final' },
+        ],
+      },
+      {
+        season: 'Saison 3',
+        results: [
+          { place: 1,  label: 'MDI Global Final' },
+          { place: 1,  label: 'Race to World First - Amirdrassil, the Dream\'s Hope' },
+        ],
+      },
+      {
+        season: 'Saison 2',
+        results: [
+          { place: 6,  label: 'TGP Global Final' },
+          { place: 2,  label: 'Race to World First - Aberrus, the Shadowed Crucible' },
+        ],
+      },
+      {
+        season: 'Saison 1',
+        results: [
+          { place: 2,  label: 'MDI Global Final' },
+        ],
+      },
     ],
   },
   {
@@ -54,14 +94,34 @@ const expansions = [
     image: '/images/addons/shadowland.png',
     years: '2020 – 2022',
     color: '#6b7fd7',
-    results: [
-      { place: 2,  label: 'TGP Global Final — Season 4' },
-      { place: 2,  label: 'TGP EU Qualifier — Season 4' },
-      { place: 2,  label: 'MDI Global Final — Season 3' },
-      { place: 1,  label: 'MDI Group B — Season 3' },
-      { place: 6,  label: 'The Great Push — Season 2' },
-      { place: 1,  label: 'The Great Push — Season 1' },
-      { place: 8,  label: 'MDI Global Final — Season 1' },
+    seasons: [
+      {
+        season: 'Saison 4',
+        results: [
+          { place: 2,  label: 'TGP Global Final' },
+          { place: 2,  label: 'TGP EU Qualifier' },
+        ],
+      },
+      {
+        season: 'Saison 3',
+        results: [
+          { place: 2,  label: 'MDI Global Final' },
+          { place: 1,  label: 'MDI Group B' },
+        ],
+      },
+      {
+        season: 'Saison 2',
+        results: [
+          { place: 6,  label: 'The Great Push' },
+        ],
+      },
+      {
+        season: 'Saison 1',
+        results: [
+          { place: 1,  label: 'The Great Push' },
+          { place: 8,  label: 'MDI Global Final' },
+        ],
+      },
     ],
   },
 ]
@@ -141,7 +201,7 @@ export default function ParcoursPage() {
                   <img
                     src={exp.image}
                     alt={exp.name}
-                    style={{ height: '34px', width: 'auto', display: 'block', objectFit: 'contain' }}
+                    style={{ height: '60px', width: 'auto', display: 'block', objectFit: 'contain' }}
                   />
                   <h2 style={{
                     fontFamily: 'var(--font-cinzel), serif',
@@ -154,7 +214,7 @@ export default function ParcoursPage() {
                   </h2>
                 </div>
                 <span style={{
-                  fontSize: '0.75rem',
+                  fontSize: '0.8rem',
                   color: 'var(--muted)',
                   letterSpacing: '0.06em',
                   flexShrink: 0,
@@ -163,23 +223,43 @@ export default function ParcoursPage() {
                 </span>
               </div>
 
-              {/* Results list */}
-              <div style={{ padding: '0.5rem 0' }}>
-                {exp.results.map((r, j) => (
+              {/* Seasons */}
+              <div style={{ padding: '0.75rem 0' }}>
+                {exp.seasons.map((s, si) => (
                   <div
-                    key={j}
+                    key={s.season}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '1rem',
-                      padding: '0.6rem 1.5rem',
-                      borderBottom: j < exp.results.length - 1 ? '1px solid rgba(30,27,51,0.6)' : 'none',
+                      padding: '0.5rem 0',
+                      borderBottom: si < exp.seasons.length - 1 ? '1px solid rgba(30,27,51,0.6)' : 'none',
                     }}
                   >
-                    {placeBadge(r.place)}
-                    <span style={{ fontSize: '0.875rem', color: 'var(--text)', letterSpacing: '0.02em' }}>
-                      {r.label}
-                    </span>
+                    <div style={{
+                      padding: '0.25rem 1.5rem',
+                      fontSize: '0.9rem',
+                      fontWeight: 600,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: exp.color,
+                      opacity: 0.85,
+                    }}>
+                      {s.season}
+                    </div>
+                    {s.results.map((r, j) => (
+                      <div
+                        key={j}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '1rem',
+                          padding: '0.5rem 1.5rem 0.5rem 2.25rem',
+                        }}
+                      >
+                        {placeBadge(r.place)}
+                        <span style={{ fontSize: '0.875rem', color: 'var(--text)', letterSpacing: '0.02em' }}>
+                          {r.label}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 ))}
               </div>
