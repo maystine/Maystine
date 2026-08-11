@@ -185,7 +185,7 @@ export default function ParcoursPage() {
                 border: '1px solid var(--border)',
                 borderLeft: `3px solid ${exp.color}`,
                 borderRadius: '10px',
-                overflow: 'hidden',
+                overflow: 'visible',
               }}
             >
               {/* Expansion header */}
@@ -248,10 +248,11 @@ export default function ParcoursPage() {
                       <div
                         key={j}
                         style={{
+                          position: 'relative',
                           display: 'flex',
                           alignItems: 'center',
                           gap: '1rem',
-                          padding: '0.5rem 1.5rem 0.5rem 2.25rem',
+                          padding: `0.5rem ${'boss' in r && r.boss ? '6rem' : '1.5rem'} 0.5rem 2.25rem`,
                         }}
                       >
                         {placeBadge(r.place)}
@@ -263,13 +264,16 @@ export default function ParcoursPage() {
                             src={r.boss}
                             alt=""
                             style={{
-                              marginLeft: 'auto',
-                              height: '28px',
-                              width: '28px',
+                              position: 'absolute',
+                              right: '1.5rem',
+                              top: '50%',
+                              transform: 'translateY(-50%)',
+                              height: '100px',
+                              width: '100px',
                               borderRadius: '50%',
                               objectFit: 'cover',
-                              border: `1px solid ${exp.color}`,
-                              flexShrink: 0,
+                              border: `2px solid ${exp.color}`,
+                              zIndex: 1,
                             }}
                           />
                         )}
