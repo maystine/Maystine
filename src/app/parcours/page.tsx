@@ -193,16 +193,16 @@ export default function ParcoursPage() {
                 padding: '1.1rem 1.5rem',
                 borderBottom: '1px solid var(--border)',
                 display: 'flex',
-                flexDirection: 'column',
-                gap: '0.35rem',
+                alignItems: 'center',
+                gap: '10px',
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <img
-                    src={exp.image}
-                    alt={exp.name}
-                    className="exp-logo"
-                    style={{ width: 'auto', display: 'block', objectFit: 'contain' }}
-                  />
+                <img
+                  src={exp.image}
+                  alt={exp.name}
+                  className="exp-logo"
+                  style={{ width: 'auto', display: 'block', objectFit: 'contain' }}
+                />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
                   <h2 className="exp-title" style={{
                     fontFamily: 'var(--font-cinzel), serif',
                     letterSpacing: '0.1em',
@@ -211,15 +211,14 @@ export default function ParcoursPage() {
                   }}>
                     {exp.name}
                   </h2>
+                  <span style={{
+                    fontSize: '0.8rem',
+                    color: '#bdbadb',
+                    letterSpacing: '0.06em',
+                  }}>
+                    {exp.years}
+                  </span>
                 </div>
-                <span style={{
-                  fontSize: '0.8rem',
-                  color: '#bdbadb',
-                  letterSpacing: '0.06em',
-                  marginLeft: '70px',
-                }}>
-                  {exp.years}
-                </span>
               </div>
 
               {/* Seasons */}
