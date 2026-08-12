@@ -218,7 +218,7 @@ export default function Navbar() {
 
           {/* Discord */}
           <a
-            href="https://discord.gg/AnJ7x4jpGG"
+            href="https://discord.gg/2AWADgUu9R"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-social"
