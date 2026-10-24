@@ -7,6 +7,9 @@ export default function MiniTwitchPlayer() {
   const pathname = usePathname()
   const [minimized, setMinimized] = useState(false)
 
+  // Masqué dans l'admin coaching, où il recouvrirait les formulaires.
+  if (pathname.startsWith('/admin')) return null
+
   return (
     <div style={{
       position: 'fixed',

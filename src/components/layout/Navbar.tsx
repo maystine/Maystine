@@ -240,6 +240,35 @@ export default function Navbar() {
             </svg>
             <span style={{ color: 'var(--text)' }}>Discord</span>
           </a>
+
+          {/* Espace élève (connexion Discord) */}
+          <Link
+            href="/espace"
+            className="btn-social"
+            onClick={() => setMenuOpen(false)}
+            aria-current={pathname.startsWith('/espace') ? 'page' : undefined}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '6px',
+              padding: '6px 12px',
+              marginLeft: '0.5rem',
+              borderRadius: '6px',
+              border: '1px solid var(--accent-light)',
+              backgroundColor: 'rgba(124, 58, 237, 0.18)',
+              fontSize: '0.75rem',
+              letterSpacing: '0.08em',
+              color: 'var(--text-bright)',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+            </svg>
+            Espace élève
+          </Link>
           </div>
         </div>
       </div>

@@ -117,6 +117,16 @@ a {
   transform: translateY(-2px);
 }
 
+/* Champs des formulaires coaching / espace élève / admin */
+.coaching-field::placeholder {
+  color: var(--muted);
+}
+
+.coaching-field:focus {
+  border-color: var(--accent-light) !important;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.18);
+}
+
 /* Navbar responsive */
 .navbar-toggle {
   display: none;
