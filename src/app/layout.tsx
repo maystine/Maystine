@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Cinzel, Inter, Caveat } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
-import MiniTwitchPlayer from '@/components/layout/MiniTwitchPlayer'
 
 const cinzel = Cinzel({
   subsets: ['latin'],
@@ -59,7 +58,6 @@ export default function RootLayout({
         <main style={{ paddingTop: '64px', position: 'relative', zIndex: 1 }}>
           {children}
         </main>
-        <MiniTwitchPlayer />
       </body>
     </html>
   )
